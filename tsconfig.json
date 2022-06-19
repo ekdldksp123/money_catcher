@@ -22,9 +22,18 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "baseUrl": ".",
+  "paths": {
+    "@atom/*": [ "src/components/atom/*" ],
+    "@molecules/*": [ "src/components/molecules/*" ],
+    "@layout/*": [ "src/components/layout/*" ],
+    "@views/*": [ "src/components/views/*" ],
+    "@libs/*": [ "src/libs/*" ],
+    "@types/*": [ "src/types/*" ],
+  }
 }

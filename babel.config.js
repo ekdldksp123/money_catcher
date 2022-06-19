@@ -1,20 +1,28 @@
 module.exports = {
-    "presets": [
-        "next/babel"
-    ],
-    "plugins": [
-        [
-            "module-resolver",
-            {
-                "root": [
-                    "."
-                ],
-                "extensions": [
-                    ".js",
-                    ".ts",
-                    ".tsx"
-                ]
-            }
-        ]
-    ]
-}
+	plugins: [
+		[
+			'module-resolver',
+			{
+				alias: {
+					'@/atom/*': 'src/components/atom/*',
+					'@/layout/*': 'src/components/layout/*',
+					'@/libs/*': 'src/libs/*',
+					'@/molecules/*': 'src/components/molecules/*',
+					'@/types/*': 'src/types/*',
+					'@/views/*': 'src/components/views/*'
+				},
+				extensions: [
+					'.js',
+					'.ts',
+					'.tsx'
+				],
+				root: [
+					'./src/'
+				]
+			}
+		]
+	],
+	presets: [
+		'next/babel'
+	]
+};

@@ -4,7 +4,7 @@ module.exports = {
 		node: true
 	},
 	extends: [ 'airbnb', 'airbnb/hooks', 'eslint:recommended', 'plugin:react/recommended', 'plugin:import/recommended' ],
-	ignorePatterns: [ '*.d.ts', 'node_modules', 'lib', 'build', 'dist', '**/env/*.js' ],
+	ignorePatterns: [ '*.d.ts', 'node_modules', 'lib', 'build', 'dist', '**/env/*.js', '*.config.js' ],
 	overrides: [
 		{
 			files: [ '*.ts', '*.tsx' ],

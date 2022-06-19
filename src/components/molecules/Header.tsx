@@ -7,7 +7,7 @@ import { Props } from '@/types/HeaderProps';
 const Header:React.FC<Props> = ({ items }) => (
 	<Navbar color='light' expand='md' light>
 		<NavbarBrand href='/'>
-			reactstrap
+			Show Me The Money
 		</NavbarBrand>
 		<NavbarToggler onClick={() => console.log('click')} />
 		<Collapse navbar>

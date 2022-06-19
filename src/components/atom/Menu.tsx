@@ -1,6 +1,7 @@
-import { Item, Props } from '@types/HeaderProps';
 import React from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
+
+import { Item, Props } from '@/types/HeaderProps';
 
 const Menu:React.FC<Props> = ({ items = [] }) =>
 {

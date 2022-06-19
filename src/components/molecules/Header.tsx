@@ -1,17 +1,17 @@
 import React from 'react';
-import { Collapse, Navbar, NavbarBrand, NavbarText, NavbarToggler } from 'reactstrap';
+import { Collapse, Navbar, NavbarBrand, NavbarToggler } from 'reactstrap';
 
-const Header:React.FC = () => (
+import Menu from '@/atom/Menu';
+import { Props } from '@/types/HeaderProps';
+
+const Header:React.FC<Props> = ({ items }) => (
 	<Navbar color='light' expand='md' light>
 		<NavbarBrand href='/'>
 			reactstrap
 		</NavbarBrand>
 		<NavbarToggler onClick={() => console.log('click')} />
 		<Collapse navbar>
-
-			<NavbarText>
-				Simple Text
-			</NavbarText>
+			<Menu items={items} />
 		</Collapse>
 	</Navbar>
 );

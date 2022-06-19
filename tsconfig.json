@@ -18,6 +18,15 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/atom/*": [ "src/components/atom/*" ],
+      "@/molecules/*": [ "src/components/molecules/*" ],
+      "@/layout/*": [ "src/components/layout/*" ],
+      "@/views/*": [ "src/components/views/*" ],
+      "@/libs/*": [ "src/libs/*" ],
+      "@/types/*": [ "src/types/*" ],
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -27,13 +36,5 @@
   "exclude": [
     "node_modules"
   ],
-  "baseUrl": ".",
-  "paths": {
-    "@atom/*": [ "src/components/atom/*" ],
-    "@molecules/*": [ "src/components/molecules/*" ],
-    "@layout/*": [ "src/components/layout/*" ],
-    "@views/*": [ "src/components/views/*" ],
-    "@libs/*": [ "src/libs/*" ],
-    "@types/*": [ "src/types/*" ],
-  }
+  
 }

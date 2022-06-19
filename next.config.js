@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+/** @/type {import('next').NextConfig} */
 
 const path = require('path');
 
@@ -9,12 +9,12 @@ const nextConfig = {
 	webpack (config) {
 		config.resolve = {
 			alias: {
-				'@atom/*': path.resolve(__dirname, 'src/components/atom/*'),
-				'@layout/*': path.resolve(__dirname, 'src/components/layout/*'),
-				'@libs/*': path.resolve(__dirname, 'src/libs/*'),
-				'@molecules/*': path.resolve(__dirname, 'src/components/molecules/*'),
-				'@types/*': path.resolve(__dirname, 'src/types/*'),
-				'@views/*': path.resolve(__dirname, 'src/components/views/*')
+				'@/atom/*': path.resolve(__dirname, 'src/components/atom/*'),
+				'@/layout/*': path.resolve(__dirname, 'src/components/layout/*'),
+				'@/libs/*': path.resolve(__dirname, 'src/libs/*'),
+				'@/molecules/*': path.resolve(__dirname, 'src/components/molecules/*'),
+				'@/types/*': path.resolve(__dirname, 'src/types/*'),
+				'@/views/*': path.resolve(__dirname, 'src/components/views/*')
 			},
 			...config.resolve
 		};

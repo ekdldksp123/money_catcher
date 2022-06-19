@@ -4,12 +4,12 @@ module.exports = {
 			'module-resolver',
 			{
 				alias: {
-					'@atom/*': 'src/components/atom/*',
-					'@layout/*': 'src/components/layout/*',
-					'@libs/*': 'src/libs/*',
-					'@molecules/*': 'src/components/molecules/*',
-					'@types/*': 'src/types/*',
-					'@views/*': 'src/components/views/*'
+					'@/atom/*': 'src/components/atom/*',
+					'@/layout/*': 'src/components/layout/*',
+					'@/libs/*': 'src/libs/*',
+					'@/molecules/*': 'src/components/molecules/*',
+					'@/types/*': 'src/types/*',
+					'@/views/*': 'src/components/views/*'
 				},
 				extensions: [
 					'.js',
@@ -17,7 +17,7 @@ module.exports = {
 					'.tsx'
 				],
 				root: [
-					'.'
+					'./src/'
 				]
 			}
 		]

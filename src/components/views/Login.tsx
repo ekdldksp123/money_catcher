@@ -1,21 +1,55 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 
 import { FormBtn } from '@/atom/ButtonGroup';
 import { ContainerCenter } from '@/layout/ContainerGroup';
 import { Form, Input, Title } from '@/molecules/FormGroup';
 
-const Login:React.FC = () => (
-	<ContainerCenter>
-		<Form css={form}>
-			<Title css={title}>Login</Title>
-			<Input css={input} placeholder='ID' type='text' />
-			<Input css={input} placeholder='Password' type='password' />
-			<FormBtn>Submit</FormBtn>
-		</Form>
-	</ContainerCenter>
-);
+const Login:React.FC = () =>
+{
+	const router = useRouter();
+
+	const [ id, setId ] = useState<string>('');
+	const [ password, setPassword ] = useState<string>('');
+
+	const onSubmit = () =>
+	{
+		if (id === 'user' && password === '123456') router.push({ pathname: '/signup' });
+		else
+		{
+			setId('');
+			setPassword('');
+			alert('회원 정보가 없습니다.');
+		}
+	};
+
+	return (
+		<ContainerCenter>
+			<Form css={form}>
+				<Title css={title}>Login</Title>
+				<Input
+					css={input}
+					id='id'
+					placeholder='ID'
+					type='text'
+					value={id}
+					onChange={(e) => setId(e.target.value)}
+				/>
+				<Input
+					css={input}
+					id='password'
+					placeholder='Password'
+					type='password'
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+				<FormBtn onClick={() => onSubmit()}>Submit</FormBtn>
+			</Form>
+		</ContainerCenter>
+	);
+};
 
 export default Login;
 

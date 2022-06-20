@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 import { Item } from '@/types/HeaderProps';
@@ -11,15 +12,25 @@ const items: Item[] = [
 	{ name: 'My 구독 관리', path: '/gu' }
 ];
 
-const NavBar:React.FC = () => (
-	<nav css={menu}>
-		<Logo>Show Me The Money</Logo>
-		<ul css={header}>
-			{items.map((v, i) => <li css={item} key={i}>{v.name}</li>)}
-		</ul>
-		<div css={account}>로그인 / 회원가입</div>
-	</nav>
-);
+const NavBar:React.FC = () =>
+{
+	const router = useRouter();
+	const navigate = (path:string) => router.push({ pathname: path });
+
+	return (
+		<nav css={menu}>
+			<Logo onClick={() => navigate('/')}>Show Me The Money</Logo>
+			<ul css={header}>
+				{items.map((v, i) => <li css={item} key={i}>{v.name}</li>)}
+			</ul>
+			<div css={account}>
+				<section onClick={() => navigate('/login')}>로그인</section>
+				<section> / </section>
+				<section onClick={() => navigate('/signup')}>회원가입</section>
+			</div>
+		</nav>
+	);
+};
 
 export default NavBar;
 
@@ -50,12 +61,25 @@ const item = css`
     padding-right: 20px;
     padding-left: 20px;
     color: #808080;
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 const Logo = styled.h1`
     color: #24CAEA;
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 const account = css`
-    color: #808080;
+    & section {
+        display: inline;
+        color: #808080;
+    }
+    & section:hover {
+        cursor: pointer;
+    }
 `;

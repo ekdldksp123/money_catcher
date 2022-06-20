@@ -29,7 +29,7 @@ export const FormWithShadow = styled.section`
 export const Title = styled.h1`
     margin: 0;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     font-size: 50px;
     color: #24CAEA;
     text-align: center;
@@ -45,9 +45,9 @@ export const Label = styled.label`
 
 export const Input = styled.input`
     width: 80% !important;
+    height: 45px;
     padding-left: 25px !important;
     margin-bottom: 20px;
-    height: 30px;
     transition: background-color 0.2s ease 0s;
     background:  repeat scroll 0 0 transparent;
     border-radius: 10px;

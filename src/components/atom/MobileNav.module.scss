@@ -1,0 +1,61 @@
+@import '../animation.scss';
+@import '../common.scss';
+
+.sidebar {
+	$width: 230px;
+	$height: 70px;
+
+	position: fixed;
+	top: $height;
+	right: -$width;
+
+	background-color: white;
+	border-left: 1px solid gainsboro;
+	box-shadow: -3px 3px 5px gainsboro;
+
+	width: $width;
+	height: calc(100% - $height);
+
+	&.open {
+		@include slide-in-animation($width);
+	}
+
+	&.close {
+		@include slide-out-animation($width);
+	}
+}
+
+.switch {
+	display: flex;
+	align-items: center;
+
+	font-size: 2.5rem;
+
+	border: transparent;
+	background-color: transparent;
+
+	cursor: pointer;
+}
+
+.mobile-nav {
+	display: flex;
+	flex-direction: column;
+}
+
+.link {
+	color: grey;
+	border-bottom: 1px solid gainsboro;
+
+	padding: 15px;
+	text-decoration: none;
+
+	transition: 0.3s;
+
+	&:hover {
+		color: black;
+	}
+
+	&.active {
+		color: $primary;
+	}
+}

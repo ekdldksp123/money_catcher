@@ -1,0 +1,24 @@
+@import '../common.scss';
+
+.account-box {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	color: grey;
+	text-decoration: none;
+
+	transition: 0.3s;
+
+	&:hover {
+		color: black;
+	}
+}
+
+.image {
+	border-radius: 50%;
+
+	$size: 32px;
+	width: $size;
+	height: $size;
+}

@@ -1,13 +1,9 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 
-const Login: NextPage = () => (
-	<>
-		<Head>
-			<link href='/favicon.ico' rel='icon' />
-		</Head>
-		<h1>Login</h1>
-	</>
+import Login from '@/views/Login';
+
+const LoginView: NextPage = () => (
+	<Login />
 );
 
-export default Login;
+export default LoginView;

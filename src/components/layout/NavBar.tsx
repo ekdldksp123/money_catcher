@@ -17,7 +17,7 @@ const NavBar:React.FC = () => (
 		<ul css={header}>
 			{items.map((v, i) => <li css={item} key={i}>{v.name}</li>)}
 		</ul>
-		<div>로그인 / 회원가입</div>
+		<div css={account}>로그인 / 회원가입</div>
 	</nav>
 );
 
@@ -27,14 +27,15 @@ const menu = css`
     position: fixed;
     top: 0;
     margin: 0;
-    padding: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
     width: 100%;
-    height: 60px;
+    height: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 3px tomato;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
 `;
 
 const header = css`
@@ -48,8 +49,13 @@ const item = css`
     display: inline;
     padding-right: 20px;
     padding-left: 20px;
+    color: #808080;
 `;
 
 const Logo = styled.h1`
-    color: #24A0ED;
+    color: #24CAEA;
+`;
+
+const account = css`
+    color: #808080;
 `;

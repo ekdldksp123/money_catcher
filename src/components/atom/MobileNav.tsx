@@ -24,14 +24,14 @@ import { NavProps } from '@/types/atom/NavProps';
  */
 export default function MobileNav({ menuList, className, ...props }: NavProps): JSX.Element
 {
-	const { pathname } = useRouter();
+	const router = useRouter();
 	const cn = classNames.bind(styles);
 
 	const [ isOpen, setOpen ] = useState(undefined as boolean | undefined);
 
 	const menu = menuList.map(({ name, path }, index) => (
 		<Link href={path} key={`mobile-nav-item-${index}`} passHref>
-			<a className={cn('link', pathname === path && 'active')} href='#replace'>{name}</a>
+			<a className={cn('link', router?.pathname === path && 'active')} href='#replace'>{name}</a>
 		</Link>
 	));
 

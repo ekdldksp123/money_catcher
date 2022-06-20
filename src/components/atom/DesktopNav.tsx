@@ -22,12 +22,12 @@ import { NavProps } from '@/types/atom/NavProps';
  */
 export default function DesktopNav({ menuList, className, ...props }: NavProps): JSX.Element
 {
-	const { pathname } = useRouter();
+	const router = useRouter();
 	const cn = classNames.bind(styles);
 
 	const menu = menuList.map(({ name, path }, index) => (
 		<Link href={path} key={`desktop-nav-item-${index}`} passHref>
-			<a className={cn('link', pathname === path && 'active')} href='#replace'>{name}</a>
+			<a className={cn('link', router?.pathname === path && 'active')} href='#replace'>{name}</a>
 		</Link>
 	));
 

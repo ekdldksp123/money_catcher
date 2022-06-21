@@ -22,10 +22,8 @@ export function useSemanticHook(width: number = refWidth): boolean
 {
 	const [ state, setState ] = useState(true);
 
-	useEffect(() =>
-	{
+	useEffect(() => {
 		const handler = () => setState(window.innerWidth >= width);
-
 		window.addEventListener('resize', handler);
 
 		handler();

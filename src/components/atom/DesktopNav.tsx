@@ -20,8 +20,7 @@ import { NavProps } from '@/types/atom/NavProps';
  *
  * @returns {JSX.Element} JSX
  */
-export default function DesktopNav({ menuList, className, ...props }: NavProps): JSX.Element
-{
+export default function DesktopNav({ menuList, className, ...props }: NavProps): JSX.Element {
 	const router = useRouter();
 	const cn = classNames.bind(styles);
 

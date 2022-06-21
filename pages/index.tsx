@@ -3,11 +3,7 @@ import Head from 'next/head';
 
 import LoginView from './login';
 
-// import styles from '../styles/Home.module.scss';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
 const Home: NextPage = () => (
-	// <div className={styles.container}>
 	<div>
 		<Head>
 			<title>Create Next App</title>

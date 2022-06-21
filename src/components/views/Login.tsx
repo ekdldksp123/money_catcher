@@ -1,48 +1,33 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+/**
+ * 
+ * 로그인 
+ *
+ * @author punchlips97
+ * @since 2022.06.21 Tue 01:23:10
+ * 
+ */
 import React from 'react';
 
 import { FormBtn } from '@/atom/ButtonGroup';
-import { ContainerCenter } from '@/layout/ContainerGroup';
-import { Form, Input, Title } from '@/molecules/FormGroup';
+import classNames from 'classnames/bind';
 
-const Login:React.FC = () => (
-	<ContainerCenter>
-		<Form css={form}>
-			<Title css={title}>Login</Title>
-			<Input css={input} placeholder='ID' type='text' />
-			<Input css={input} placeholder='Password' type='password' />
-			<FormBtn>Submit</FormBtn>
-		</Form>
-	</ContainerCenter>
-);
+import styles from '@/molecules/FormGroup.module.scss';
+
+const Login:React.FC = () => {
+    const cn = classNames.bind(styles);
+
+	return (
+        <section className={cn('container-center')}>
+            
+            <section className={cn('form')}>
+                <h1 className={cn('title')}>Login</h1>
+                <input placeholder='ID' type='text' />
+                <input placeholder='Password' type='password' />
+                <FormBtn>Submit</FormBtn>
+            </section>
+        </section>
+    );
+};
 
 export default Login;
 
-const title = css`
-    @media (max-width: 600px) {
-        margin-left: 10px;
-    }
-`;
-
-const form = css`
-    @media (max-width: 600px) {
-        margin-left: 25px;
-        margin-top: 25px;
-        width: 250px;
-        height: 75vh;
-        padding: 0.5em 1em 0.5em 1em;
-
-        overflow-y: auto;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
-`;
-
-const input = css`
-    @media (max-width: 600px) {
-        width: 85% !important;
-    }
-`;

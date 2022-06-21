@@ -19,7 +19,7 @@ export default function AccountBox({ hasLogin, className, ...props }: AccountBox
 
 	return (
 		<Link href={hasLogin ? '/mypage' : '/login'} passHref>
-			<a className={cn('account-box', className)} href='#replace' {...props}>
+			<a className={cn('account-box', 'dark', 'test', className)} href='#replace' {...props}>
 				{hasLogin ? <img alt='account' className={cn('image')} src='http://via.placeholder.com/50x50' /> : <FaUser />}
 				{hasLogin ? '테스트' : '로그인'}
 			</a>

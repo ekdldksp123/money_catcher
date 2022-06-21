@@ -1,0 +1,42 @@
+@mixin slide-in-animation($width) {
+	animation: slide-in 0.5s ease forwards;
+
+	@keyframes slide-in {
+		from {
+			transform: translate(0px, 0px);
+		}
+
+		to {
+			transform: translate(-$width, 0px);
+		}
+	}
+}
+
+@mixin slide-out-animation($width) {
+	animation: slide-out 0.5s ease forwards;
+
+	@keyframes slide-out {
+		from {
+			transform: translate(-$width, 0px);
+		}
+
+		to {
+			transform: translate(0px, 0px);
+		}
+	}
+}
+
+@mixin rotate-animation($sec) {
+	animation: rotate $sec linear infinite;
+	transform-origin: 50% 50%;
+
+	@keyframes rotate {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}

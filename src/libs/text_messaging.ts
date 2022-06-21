@@ -9,11 +9,10 @@ interface MessageData {
   content: string; // 메시지내용
   messages: Messages[];
   reserveTime?: string; // 메시지 발송 예약 일시 (yyyy-MM-dd HH:mm)
-  scheduleCode?: string; // 등록하려는 스케줄 코드
 }
 interface Messages {
   to: string; // 받는사람 전화번호
-  // 개별적으로 보낼 메시지내용 ->messages 내에 subject, content를 정의하지 않으면 기본 subject, content로 지정된 값으로 발송
+  // 개별적으로 보낼 메시지내용 -> messages 내에 subject, content를 정의하지 않으면 기본 subject, content로 지정된 값으로 발송
   content?: string;
   subject?: string;
 }
@@ -52,7 +51,7 @@ export class TextMessagingShared
 			content: textMessagingContent.content.replace('<br>', '\n'),
 			from: this.sendNumber,
 			messages: textMessagingContent.userPhoneNumberList.map((phoneNumber): Messages => ({
-				subject: '펀드고',
+				subject: 'MayB',
 				to: phoneNumber
 			})),
 			type: 'LMS'

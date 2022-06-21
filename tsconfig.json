@@ -20,12 +20,24 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/atom/*": [ "src/components/atom/*" ],
-      "@/molecules/*": [ "src/components/molecules/*" ],
-      "@/layout/*": [ "src/components/layout/*" ],
-      "@/views/*": [ "src/components/views/*" ],
-      "@/libs/*": [ "src/libs/*" ],
-      "@/types/*": [ "src/types/*" ],
+      "@/atom/*": [
+        "src/components/atom/*"
+      ],
+      "@/molecules/*": [
+        "src/components/molecules/*"
+      ],
+      "@/layout/*": [
+        "src/components/layout/*"
+      ],
+      "@/views/*": [
+        "src/components/views/*"
+      ],
+      "@/libs/*": [
+        "src/libs/*"
+      ],
+      "@/types/*": [
+        "src/types/*"
+      ],
     }
   },
   "include": [
@@ -34,7 +46,8 @@
     "**/*.tsx",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "./src/**/*.test.tsx",
+    "./src/**/*.stories.tsx",
   ],
-  
 }

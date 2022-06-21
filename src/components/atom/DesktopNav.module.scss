@@ -1,0 +1,25 @@
+@import '../common.scss';
+
+.desktop-nav {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+
+	padding-right: 100px;
+}
+
+.link {
+	color: grey;
+
+	text-decoration: none;
+
+	transition: 0.3s;
+
+	&:hover {
+		color: black;
+	}
+
+	&.active {
+		color: $primary;
+	}
+}

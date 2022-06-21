@@ -6,9 +6,9 @@ import React, { useState } from 'react';
 import { FormBtn } from '@/atom/ButtonGroup';
 import { ContainerCenter } from '@/layout/ContainerGroup';
 import { Form, Input, Title } from '@/molecules/FormGroup';
+import Link from 'next/link';
 
-const Login:React.FC = () =>
-{
+const Login:React.FC = () => {
 	const router = useRouter();
 
 	const [ id, setId ] = useState<string>('');
@@ -46,6 +46,7 @@ const Login:React.FC = () =>
 					onChange={(e) => setPassword(e.target.value)}
 				/>
 				<FormBtn onClick={() => onSubmit()}>Submit</FormBtn>
+				<Link href='/signup'>회원 가입하기</Link>
 			</Form>
 		</ContainerCenter>
 	);

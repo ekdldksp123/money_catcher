@@ -3,32 +3,23 @@ module.exports = {
 		browser: true,
 		node: true
 	},
-	extends: [ 'airbnb', 'airbnb/hooks', 'eslint:recommended', 'plugin:react/recommended', 'plugin:import/recommended' ],
+	extends: [ 'airbnb', 'airbnb/hooks', 'eslint:recommended', 'plugin:react/recommended', 'plugin:import/recommended', 'plugin:storybook/recommended' ],
 	ignorePatterns: [ '*.d.ts', 'node_modules', 'lib', 'build', 'dist', '**/env/*.js', '*.config.js' ],
-	overrides: [
-		{
-			files: [ '*.ts', '*.tsx' ],
-			rules: { 'no-undef': 'off' }
-		}
-	],
+	overrides: [{
+		files: [ '*.ts', '*.tsx' ],
+		rules: { 'no-undef': 'off' }
+	}],
 	parser: '@typescript-eslint/parser',
 	parserOptions: { warnOnUnsupportedTypeScriptVersion: false },
 	plugins: [ '@typescript-eslint', 'sort-keys-fix' ],
 	rules: {
-		'@typescript-eslint/ban-ts-comment': [
-			'error',
-			{ 'ts-ignore': 'allow-with-description' }
-		],
+		'@typescript-eslint/ban-ts-comment': [ 'error', { 'ts-ignore': 'allow-with-description' }],
 		'@typescript-eslint/no-explicit-any': 'warn',
 		'@typescript-eslint/no-unused-vars': 'error',
-		'array-bracket-spacing': [
-			'error',
-			'always',
-			{
-				arraysInArrays: false,
-				objectsInArrays: false
-			}
-		],
+		'array-bracket-spacing': [ 'error', 'always', {
+			arraysInArrays: false,
+			objectsInArrays: false
+		}],
 		'brace-style': [ 'error', 'allman' ],
 		'comma-dangle': [ 'error', 'never' ],
 		'eol-last': [ 'error', 'never' ],
@@ -39,20 +30,18 @@ module.exports = {
 		'import/no-extraneous-dependencies': 'off',
 		'import/no-named-as-default': 'off',
 		'import/no-unresolved': 'off',
-		'import/order': [
-			'error',
-			{
-				alphabetize: {
-					caseInsensitive: true,
-					order: 'asc'
-				},
-				groups: [ 'external', 'builtin', 'internal', 'sibling', 'parent', 'index' ],
-				'newlines-between': 'always'
-			}
-		],
+		'import/order': [ 'error', {
+			alphabetize: {
+				caseInsensitive: true,
+				order: 'asc'
+			},
+			groups: [ 'external', 'builtin', 'internal', 'sibling', 'parent', 'index' ],
+			'newlines-between': 'always'
+		}],
 		'import/prefer-default-export': 'off',
 		indent: [ 'error', 'tab' ],
 		'jsx-a11y/click-events-have-key-events': 'off',
+		'jsx-a11y/control-has-associated-label': 'off',
 		'jsx-a11y/no-static-element-interactions': 'off',
 		'jsx-quotes': [ 'error', 'prefer-single' ],
 		'linebreak-style': 'off',
@@ -81,30 +70,24 @@ module.exports = {
 		'react/button-has-type': 'off',
 		'react/destructuring-assignment': 'off',
 		'react/function-component-definition': 'off',
-		'react/jsx-curly-brace-presence': [
-			'error',
-			{
-				children: 'never',
-				props: 'never'
-			}
-		],
+		'react/jsx-curly-brace-presence': [ 'error', {
+			children: 'never',
+			props: 'never'
+		}],
 		'react/jsx-filename-extension': 'off',
 		'react/jsx-indent': [ 'error', 'tab' ],
 		'react/jsx-indent-props': [ 2, 'tab' ],
 		'react/jsx-one-expression-per-line': 'off',
 		'react/jsx-props-no-spreading': 'off',
-		'react/jsx-sort-props': [
-			'error',
-			{
-				callbacksLast: true,
-				ignoreCase: true,
-				multiline: 'last',
-				noSortAlphabetically: false,
-				reservedFirst: false,
-				shorthandFirst: false,
-				shorthandLast: true
-			}
-		],
+		'react/jsx-sort-props': [ 'error', {
+			callbacksLast: true,
+			ignoreCase: true,
+			multiline: 'last',
+			noSortAlphabetically: false,
+			reservedFirst: false,
+			shorthandFirst: false,
+			shorthandLast: true
+		}],
 		'react/no-array-index-key': 'off',
 		'react/no-danger': 'off',
 		'react/prop-types': 'off',

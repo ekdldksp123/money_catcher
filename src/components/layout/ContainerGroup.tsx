@@ -9,15 +9,3 @@ export const ContainerCenter = styled.section`
     flex-direction: column;
     box-sizing: border-box;
 `;
-
-export const ContainerColumn = styled.section`
-    display: flex;
-    flex-direction: column;
-    padding: 25px;
-`;
-
-export const ContainerRow = styled.section`
-    display: flex;
-    flex-direction: row;
-    padding: 25px;
-`;

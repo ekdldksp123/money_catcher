@@ -19,7 +19,7 @@ import { LoadingProps } from '@/types/atom/LoadingProps';
  *
  * @returns {JSX.Element | null} JSX
  */
-export default function Loading({ hasLoading }: LoadingProps): JSX.Element | null
+export default function Loading({ hasLoading }: LoadingProps): JSX.Element | null | undefined | boolean {
 {
 	const cn = classNames.bind(styles);
 

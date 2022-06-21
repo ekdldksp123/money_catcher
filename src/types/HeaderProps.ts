@@ -1,8 +1,8 @@
-export interface Props {
-    items: Item[];
+export interface props {
+    items: item[];
 }
 
-export interface Item {
+export interface item {
 	name: string;
 	path: string;
 }

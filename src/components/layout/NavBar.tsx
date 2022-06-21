@@ -13,7 +13,7 @@ const items: Item[] = [
 	{ name: '홈', path: '/' },
 	{ name: 'My 지출 관리', path: '/incomes' },
 	{ name: 'My 저축 관리', path: '/savings' },
-	{ name: 'My 구독 관리', path: '/subscriptions' },
+	{ name: 'My 구독 관리', path: '/subscriptions' }
 ];
 
 const NavBar:React.FC = () =>

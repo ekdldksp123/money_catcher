@@ -3,11 +3,11 @@
 
 	@keyframes slide-in {
 		from {
-			transform: translate(0px, 0px);
+			transform: translate(0, 0);
 		}
 
 		to {
-			transform: translate(-$width, 0px);
+			transform: translate(-$width, 0);
 		}
 	}
 }
@@ -17,11 +17,11 @@
 
 	@keyframes slide-out {
 		from {
-			transform: translate(-$width, 0px);
+			transform: translate(-$width, 0);
 		}
 
 		to {
-			transform: translate(0px, 0px);
+			transform: translate(0, 0);
 		}
 	}
 }

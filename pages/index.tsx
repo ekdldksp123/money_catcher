@@ -1,10 +1,11 @@
+import classNames from 'classnames/bind';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+
 import styles from '@/layout/ContainerGroup.module.scss';
-import classNames from 'classnames/bind';
 
-const Home: NextPage = () => {
-
+const Home: NextPage = () =>
+{
 	const cn = classNames.bind(styles);
 	return (
 		<div>

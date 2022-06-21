@@ -8,11 +8,9 @@
 	position: fixed;
 	top: $height;
 	right: -$width;
-
 	background-color: white;
 	border-left: 1px solid gainsboro;
 	box-shadow: -3px 3px 5px gainsboro;
-
 	width: $width;
 	height: calc(100% - $height);
 
@@ -28,12 +26,9 @@
 .switch {
 	display: flex;
 	align-items: center;
-
 	font-size: 2.5rem;
-
 	border: transparent;
 	background-color: transparent;
-
 	cursor: pointer;
 }
 
@@ -45,10 +40,8 @@
 .link {
 	color: grey;
 	border-bottom: 1px solid gainsboro;
-
 	padding: 15px;
 	text-decoration: none;
-
 	transition: 0.3s;
 
 	&:hover {

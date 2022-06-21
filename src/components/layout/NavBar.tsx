@@ -1,8 +1,8 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
+import classNames from 'classnames/bind';
 import React from 'react';
 import { useSemanticHook } from 'src/common/hooks';
+
+import styles from './NavBar.module.scss';
 
 import AccountBox from '@/atom/AccountBox';
 import DesktopNav from '@/atom/DesktopNav';
@@ -19,12 +19,13 @@ const items: Item[] = [
 const NavBar:React.FC = () =>
 {
 	const isSemantic = useSemanticHook();
+	const cn = classNames.bind(styles);
 
 	return (
-		<nav css={menu}>
-			<Logo>Show Me The Money</Logo>
+		<nav className={cn('menu')}>
+			<h1 className={cn('logo')}>Show Me The Money</h1>
 
-			<div css={wrapper}>
+			<div className={cn('wrapper')}>
 				{isSemantic ? <DesktopNav menuList={items} /> : <MobileNav menuList={items} />}
 
 				<AccountBox />
@@ -34,30 +35,3 @@ const NavBar:React.FC = () =>
 };
 
 export default NavBar;
-
-const menu = css`
-    position: fixed;
-    top: 0;
-    margin: 0;
-    padding-right: 25px;
-    padding-left: 25px;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px;
-    background-color: white;
-    z-index: 20;
-`;
-
-const wrapper = css`
-    display: flex;
-    align-items: center;
-    gap: 20px;
-`;
-
-const Logo = styled.h1`
-    color: #24CAEA;
-`;

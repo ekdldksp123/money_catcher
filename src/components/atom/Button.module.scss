@@ -2,16 +2,13 @@
 
 .button {
 	$color: black;
+
 	background-color: $color;
 	border: 1px solid $color;
-
 	padding: 5px 10px;
-
 	color: white;
-
 	font-family: inherit;
 	font-size: inherit;
-
 	transition: 0.3s;
 	cursor: pointer;
 
@@ -34,6 +31,7 @@
 
 	&.color-primary {
 		$color: $primary;
+
 		background-color: $color;
 		border: 1px solid $color;
 
@@ -45,6 +43,7 @@
 
 	&.color-submit {
 		$color: limegreen;
+
 		background-color: $color;
 		border: 1px solid $color;
 
@@ -56,6 +55,7 @@
 
 	&.color-info {
 		$color: dodgerblue;
+
 		background-color: $color;
 		border: 1px solid $color;
 
@@ -67,6 +67,7 @@
 
 	&.color-warn {
 		$color: orange;
+
 		background-color: $color;
 		border: 1px solid $color;
 
@@ -78,6 +79,7 @@
 
 	&.color-error {
 		$color: crimson;
+
 		background-color: $color;
 		border: 1px solid $color;
 
@@ -89,6 +91,7 @@
 
 	&.color-negative {
 		$color: white;
+
 		background-color: $color;
 		border: 1px solid $color;
 		color: black;

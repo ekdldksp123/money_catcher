@@ -20,9 +20,12 @@ module.exports = {
 					'./src/'
 				]
 			}
-		]
+		],
+		["@babel/plugin-transform-runtime"]
 	],
 	presets: [
+		"@babel/preset-env",
+        "@babel/preset-react",
 		'next/babel'
 	]
 };

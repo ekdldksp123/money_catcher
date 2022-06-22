@@ -13,7 +13,7 @@
     "lint:etc:fix": "prettier \"**/*.{json,yaml,md}\" --write",
     "lint:css": "stylelint \"./**/*.{css,scss}\"",
     "lint:css:fix": "stylelint \"./**/*.{css,scss}\" --fix",
-    "deploy": "gh-pages -d build",
+    "export": "gh-pages -d build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

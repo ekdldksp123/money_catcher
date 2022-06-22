@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "lint:es": "eslint \"**/*.{js,ts,tsx}\"",
@@ -13,7 +14,7 @@
     "lint:etc:fix": "prettier \"**/*.{json,yaml,md}\" --write",
     "lint:css": "stylelint \"./**/*.{css,scss}\"",
     "lint:css:fix": "stylelint \"./**/*.{css,scss}\" --fix",
-    "export": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

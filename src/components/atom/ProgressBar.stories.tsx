@@ -42,7 +42,10 @@ function getTemplate(args: ProgressProps): ComponentStory<typeof ProgressBar>
 
 export const ProgressCompelete = getTemplate.bind({});
 
-ProgressCompelete.args = { percent: 100 } as ProgressProps;
+ProgressCompelete.args = {
+    percent: 100, 
+    status: 'success'
+} as ProgressProps;
 
 export const ProgressActive = getTemplate.bind({});
 
@@ -55,5 +58,23 @@ export const ProgressException = getTemplate.bind({});
 
 ProgressException.args = {
 	percent: 70,
-	status: 'exception'
+	status: 'exception',
 } as ProgressProps;
+
+export const CircleProgressCompelete = getTemplate.bind({});
+
+CircleProgressCompelete.args = {
+    status: 'success',
+    percent: 100, 
+    type: 'circle'
+} as ProgressProps;
+
+
+export const CircleProgressException = getTemplate.bind({});
+
+CircleProgressException.args = {
+    status: 'exception',
+    percent: 100, 
+    type: 'circle'
+} as ProgressProps;
+

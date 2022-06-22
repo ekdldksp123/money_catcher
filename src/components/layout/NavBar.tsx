@@ -7,9 +7,9 @@ import styles from './NavBar.module.scss';
 import AccountBox from '@/atom/AccountBox';
 import DesktopNav from '@/atom/DesktopNav';
 import MobileNav from '@/atom/MobileNav';
-import { Item } from '@/types/HeaderProps';
+import { item } from '@/types/HeaderProps';
 
-const items: Item[] = [
+const items: item[] = [
 	{ name: '홈', path: '/' },
 	{ name: 'My 지출 관리', path: '/incomes' },
 	{ name: 'My 저축 관리', path: '/savings' },

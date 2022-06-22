@@ -7,7 +7,7 @@
 
 import { NextPage } from 'next';
 
-export default function MyPage(): NextPage
+const MyPage: NextPage = () =>
 {
 	return (
 		<div>
@@ -15,3 +15,5 @@ export default function MyPage(): NextPage
 		</div>
 	);
 }
+
+export default MyPage;

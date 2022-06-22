@@ -20,7 +20,8 @@ module.exports = {
 					'./src/'
 				]
 			}
-		]
+		],
+		["@babel/plugin-transform-runtime"]
 	],
 	presets: [
 		"@babel/preset-env",

@@ -1,14 +1,12 @@
-import "antd/dist/antd.css";
-import React from "react";
-import { Progress } from "antd";
-import { ProgressProps } from "@/types/atom/ProgressProps";
+import 'antd/dist/antd.css';
+import { Progress } from 'antd';
+import React from 'react';
 
-const ProgressBar:React.FC<ProgressProps> = ({progress, status}) => {
-  return (status ? 
-    <Progress percent={progress} status={status} />
-    :
-    <Progress percent={progress} />
-  );
-};
+import { ProgressProps } from '@/types/atom/ProgressProps';
+
+const ProgressBar:React.FC<ProgressProps> = ({ progress, status }) => (status
+	? <Progress percent={progress} status={status} />
+	: <Progress percent={progress} />
+);
 
 export default ProgressBar;

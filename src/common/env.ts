@@ -6,4 +6,4 @@
  */
 
 // 반응성 기준 길이
-export const refWidth = 960;
+export const refWidth = 900;

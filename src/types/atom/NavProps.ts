@@ -7,7 +7,7 @@
 
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-import { Item } from '../HeaderProps';
+import { Item } from '../layout/HeaderProps';
 
 export interface NavProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>
 {

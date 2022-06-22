@@ -11,10 +11,10 @@ import { refWidth } from './env';
 
 /**
  * 반응형 여부 반환 훅 메서드
- * - true: 데스크탑
+ * - true: 데스크탑, 태블릿
  * - false: 모바일
  *
- * @param {number} ref: 기준 너비
+ * @param {number} width : 기준 너비
  *
  * @returns {boolean} 반응형 여부
  */

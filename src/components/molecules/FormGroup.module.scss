@@ -1,37 +1,113 @@
 @import '../common.scss';
+@import '../mixmin.scss';
 
-.form {
-    z-index: 11;
-    margin-top: 40px;
-    width: 35vw;
-    height: 90vh;
-    background-color: #fff;
-    border-radius: 1.5rem;
-    padding: 1em 1.5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+@include mobile {
+    .form {
+        z-index: 11;
+        margin-top: 40px;
+        width: 85vw;
+        height: 90vh;
+        background-color: #fff;
+        border-radius: 1.5rem;
+        padding: 1em 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-with-shadow {
+        z-index: 11;
+        margin-top: 40px;
+        width: 85vw;
+        height: 90vh;
+        background-color: #fff;
+        border-radius: 1.5rem;
+        padding: 1em 1.5em;
+        box-shadow: rgb(0 0 0 / 35%) 0 5px 5px;
+    }
+
+    .title {
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 40px;
+        color: #24CAEA;
+        text-align: center;
+    }
 }
 
-.form-with-shadow {
-    z-index: 11;
-    margin-top: 40px;
-    width: 35vw;
-    height: 55vh;
-    background-color: #fff;
-    border-radius: 1.5rem;
-    padding: 1em 1.5em;
-    box-shadow: rgb(0 0 0 / 35%) 0 5px 5px;
+@include tablet {
+    .form {
+        z-index: 11;
+        margin-top: 40px;
+        width: 50vw;
+        height: 90vh;
+        background-color: #fff;
+        border-radius: 1.5rem;
+        padding: 1em 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .form-with-shadow {
+        z-index: 11;
+        margin-top: 40px;
+        width: 50vw;
+        height: 90vh;
+        background-color: #fff;
+        border-radius: 1.5rem;
+        padding: 1em 1.5em;
+        box-shadow: rgb(0 0 0 / 35%) 0 5px 5px;
+    }
+
+    .title {
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 40px;
+        color: #24CAEA;
+        text-align: center;
+    }
 }
 
-.title {
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 50px;
-    color: #24CAEA;
-    text-align: center;
+@include desktop {
+    .form {
+        z-index: 11;
+        margin-top: 40px;
+        width: 40vw;
+        height: 90vh;
+        background-color: #fff;
+        border-radius: 1.5rem;
+        padding: 1em 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-with-shadow {
+        z-index: 11;
+        margin-top: 40px;
+        width: 40vw;
+        height: 90vh;
+        background-color: #fff;
+        border-radius: 1.5rem;
+        padding: 1em 1.5em;
+        box-shadow: rgb(0 0 0 / 35%) 0 5px 5px;
+    }
+
+    .title {
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 50px;
+        color: #24CAEA;
+        text-align: center;
+    }
 }
 
 .label {

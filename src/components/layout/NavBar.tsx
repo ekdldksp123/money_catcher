@@ -7,7 +7,7 @@ import styles from './NavBar.module.scss';
 import AccountBox from '@/atom/AccountBox';
 import DesktopNav from '@/atom/DesktopNav';
 import MobileNav from '@/atom/MobileNav';
-import { Item } from '@/types/HeaderProps';
+import { Item } from '@/types/layout/HeaderProps';
 
 const items: Item[] = [
 	{ name: '홈', path: '/' },
@@ -23,7 +23,7 @@ const NavBar:React.FC = () =>
 
 	return (
 		<nav className={cn('menu')}>
-			<h1 className={cn('logo')}>Show Me The Money</h1>
+			<span className={cn('logo')}>Show Me The Money</span>
 
 			<div className={cn('wrapper')}>
 				{isSemantic ? <DesktopNav menuList={items} /> : <MobileNav menuList={items} />}

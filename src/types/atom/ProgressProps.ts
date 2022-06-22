@@ -1,4 +1,4 @@
 export interface ProgressProps {
-    progress: number;
+    percent: number;
     status?: 'active' | 'exception';
 }

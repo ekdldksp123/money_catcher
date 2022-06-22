@@ -42,18 +42,18 @@ function getTemplate(args: ProgressProps): ComponentStory<typeof ProgressBar>
 
 export const ProgressCompelete = getTemplate.bind({});
 
-ProgressCompelete.args = { process: 100 } as unknown as ProgressProps;
+ProgressCompelete.args = { percent: 100 } as ProgressProps;
 
 export const ProgressActive = getTemplate.bind({});
 
 ProgressActive.args = {
-	process: 50,
+	percent: 50,
 	status: 'active'
-} as unknown as ProgressProps;
+} as ProgressProps;
 
 export const ProgressException = getTemplate.bind({});
 
 ProgressException.args = {
-	process: 70,
+	percent: 70,
 	status: 'exception'
-} as unknown as ProgressProps;
+} as ProgressProps;

@@ -1,12 +1,20 @@
-import 'antd/dist/antd.css';
-import { Progress } from 'antd';
-import React from 'react';
+import "antd/dist/antd.css";
+import React from "react";
+import { Progress } from "antd";
+import { ProgressProps } from "@/types/atom/ProgressProps";
 
-import { ProgressProps } from '@/types/atom/ProgressProps';
+const ProgressBar:React.FC<ProgressProps> = ({percent, status}) => {
 
-const ProgressBar:React.FC<ProgressProps> = ({ progress, status }) => (status
-	? <Progress percent={progress} status={status} />
-	: <Progress percent={progress} />
-);
+  return (status ? 
+    <Progress strokeColor={strokeColor} percent={percent} status={status} />
+    :
+    <Progress strokeColor={strokeColor} percent={percent} />
+  );
+};
 
 export default ProgressBar;
+
+const strokeColor = {
+  '0%': '#108ee9',
+  '100%': '#87d068',
+};

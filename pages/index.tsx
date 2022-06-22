@@ -1,21 +1,23 @@
+import classNames from 'classnames/bind';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import LoginView from './login';
+import styles from '@/layout/ContainerGroup.module.scss';
 
-// import styles from '../styles/Home.module.scss';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-const Home: NextPage = () => (
-	// <div className={styles.container}>
-	<div>
-		<Head>
-			<title>Create Next App</title>
-			<meta content='Created by MayB' name='description' />
-			<link href='/favicon.ico' rel='icon' />
-		</Head>
-		<LoginView />
-	</div>
-);
+const Home: NextPage = () =>
+{
+	const cn = classNames.bind(styles);
+	return (
+		<div>
+			<Head>
+				<title>Create Next App</title>
+				<meta content='Created by MayB' name='description' />
+			</Head>
+			<section className={cn('container-center')}>
+				Main
+			</section>
+		</div>
+	);
+};
 
 export default Home;

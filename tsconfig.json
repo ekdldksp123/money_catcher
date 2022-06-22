@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,34 +16,14 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/atom/*": [
-        "src/components/atom/*"
-      ],
-      "@/molecules/*": [
-        "src/components/molecules/*"
-      ],
-      "@/layout/*": [
-        "src/components/layout/*"
-      ],
-      "@/views/*": [
-        "src/components/views/*"
-      ],
-      "@/libs/*": [
-        "src/libs/*"
-      ],
-      "@/types/*": [
-        "src/types/*"
-      ],
+      "@/atom/*": ["src/components/atom/*"],
+      "@/molecules/*": ["src/components/molecules/*"],
+      "@/layout/*": ["src/components/layout/*"],
+      "@/views/*": ["src/components/views/*"],
+      "@/libs/*": ["src/libs/*"],
+      "@/types/*": ["src/types/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-  ],
-  "exclude": [
-    "node_modules",
-    "./src/**/*.test.tsx",
-    "./src/**/*.stories.tsx",
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "./src/**/*.test.tsx", "./src/**/*.stories.tsx"]
 }

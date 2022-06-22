@@ -5,9 +5,10 @@
  * @since 2022.06.21 Tue 00:59:14
  */
 
-import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
+// import { HTMLAttributes, AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
+// type T = keyof HTMLAttributes<AnchorHTMLAttributes<any>>;
 
-export interface AccountBoxProps extends DetailedHTMLProps<HTMLAttributes<AnchorHTMLAttributes>, HTMLAnchorElement>
+export interface AccountBoxProps extends HTMLAnchorElement
 {
 	hasLogin?: boolean
 }

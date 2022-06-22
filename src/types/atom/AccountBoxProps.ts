@@ -6,6 +6,7 @@
  */
 
 import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
+
 export interface AccountBoxProps extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
 {
 	hasLogin?: boolean

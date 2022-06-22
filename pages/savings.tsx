@@ -1,7 +1,5 @@
 import { NextPage } from 'next';
 
-const Savings:NextPage = () => {
-    return <>Savings</>
-}
+const Savings:NextPage = () => <>Savings</>;
 
 export default Savings;

@@ -1,7 +1,5 @@
 import { NextPage } from 'next';
 
-const Subscriptions:NextPage = () => {
-    return <>Subscriptions</>
-}
+const Subscriptions:NextPage = () => <>Subscriptions</>;
 
 export default Subscriptions;

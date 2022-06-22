@@ -7,13 +7,10 @@
 
 import { NextPage } from 'next';
 
-const MyPage: NextPage = () =>
-{
-	return (
-		<div>
-			test
-		</div>
-	);
-}
+const MyPage: NextPage = () => (
+	<div>
+		test
+	</div>
+);
 
 export default MyPage;

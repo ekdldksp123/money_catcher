@@ -1,0 +1,101 @@
+@import '../common.scss';
+
+.button {
+	$color: black;
+	background-color: $color;
+	border: 1px solid $color;
+
+	padding: 5px 10px;
+
+	color: white;
+
+	font-family: inherit;
+	font-size: inherit;
+
+	transition: 0.3s;
+	cursor: pointer;
+
+	&:hover:not(:disabled) {
+		background-color: transparent;
+		color: $color;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+	}
+
+	&.border-round {
+		border-radius: 5px;
+	}
+
+	&.border-circle {
+		border-radius: 100px;
+	}
+
+	&.color-primary {
+		$color: $primary;
+		background-color: $color;
+		border: 1px solid $color;
+
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			color: $color;
+		}
+	}
+
+	&.color-submit {
+		$color: limegreen;
+		background-color: $color;
+		border: 1px solid $color;
+
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			color: $color;
+		}
+	}
+
+	&.color-info {
+		$color: dodgerblue;
+		background-color: $color;
+		border: 1px solid $color;
+
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			color: $color;
+		}
+	}
+
+	&.color-warn {
+		$color: orange;
+		background-color: $color;
+		border: 1px solid $color;
+
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			color: $color;
+		}
+	}
+
+	&.color-error {
+		$color: crimson;
+		background-color: $color;
+		border: 1px solid $color;
+
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			color: $color;
+		}
+	}
+
+	&.color-negative {
+		$color: white;
+		background-color: $color;
+		border: 1px solid $color;
+		color: black;
+
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			color: $color;
+		}
+	}
+}

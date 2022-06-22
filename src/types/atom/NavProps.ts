@@ -5,7 +5,7 @@
  * @since 2022.06.20 Mon 23:33:59
  */
 
-import { DetailedHTMLProps } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import { Item } from '../HeaderProps';
 

@@ -40,6 +40,7 @@ module.exports = {
 		}],
 		'import/prefer-default-export': 'off',
 		indent: [ 'error', 'tab' ],
+		'jsx-a11y/anchor-is-valid': 'off',
 		'jsx-a11y/click-events-have-key-events': 'off',
 		'jsx-a11y/control-has-associated-label': 'off',
 		'jsx-a11y/no-noninteractive-element-interactions': 'off',
@@ -79,6 +80,7 @@ module.exports = {
 		'react/jsx-filename-extension': 'off',
 		'react/jsx-indent': [ 'error', 'tab' ],
 		'react/jsx-indent-props': [ 2, 'tab' ],
+		'react/jsx-no-useless-fragment': 'off',
 		'react/jsx-one-expression-per-line': 'off',
 		'react/jsx-props-no-spreading': 'off',
 		'react/jsx-sort-props': [ 'error', {

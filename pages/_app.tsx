@@ -37,8 +37,6 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element
 			<Header />
 
 			<Component {...pageProps} />
-
-			<div className='portal' />
 		</RecoilRoot>
 	);
 }

@@ -7,6 +7,7 @@
 
 import classNames from 'classnames/bind';
 import { useRouter } from 'next/router';
+import { FormEvent } from 'react';
 
 import btnStyles from '@/atom/ButtonGroup.module.scss';
 import formStyles from '@/molecules/FormGroup.module.scss';

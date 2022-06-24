@@ -27,7 +27,7 @@ export const title = 'Show Me The Money';
 export const user: User = {
 	address: '서울',
 	avatar: 'https://i.pinimg.com/originals/e4/59/7c/e4597c310d9b39e749cf0157d43763fb.jpg',
-	birthYear: '2000',
+	birthYear: 2000,
 	gender: 'Unknown',
 	id: 'test',
 	name: '테스트',

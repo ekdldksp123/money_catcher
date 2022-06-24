@@ -1,5 +1,3 @@
-import { IconType } from 'react-icons';
-
 export interface Props {
     items: Item[];
 }
@@ -7,5 +5,5 @@ export interface Props {
 export interface Item {
 	name: string
 	path: string
-	icon: IconType
+	icon: JSX.Element
 }

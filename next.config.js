@@ -3,7 +3,7 @@
 const path = require('path');
 
 const isProd = process.env.NODE_ENV === 'production';
-const productionUrl = 'https://ekdldksp123.github.io/mayb-front';
+const productionUrl = 'https://mayb.netlify.app/';
 
 const nextConfig = {
 	webpack (config) {

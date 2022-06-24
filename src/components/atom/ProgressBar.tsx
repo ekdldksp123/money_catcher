@@ -1,28 +1,33 @@
-import "antd/dist/antd.css";
-import React from "react";
-import { Progress } from "antd";
-import { ProgressProps } from "@/types/atom/ProgressProps";
+import 'antd/dist/antd.css';
+import { Progress } from 'antd';
+import React from 'react';
 
-const ProgressBar:React.FC<ProgressProps> = ({percent, status, type}) => {
+import { ProgressProps } from '@/types/atom/ProgressProps';
 
-  const renderProgress = (status?:any, type?:any) => {
-    if(status && type) {
-      return  <Progress strokeColor={strokeColor} percent={percent} status={status} type={type} />
-    } else if(status) {
-      return  <Progress strokeColor={strokeColor} percent={percent} status={status} type='line'/>
-    } else if(type) {
-      return <Progress strokeColor={strokeColor} percent={percent} type={type} />
-    } else return <></>
-  }
+const ProgressBar:React.FC<ProgressProps> = ({ percent, status, type }) =>
+{
+	const renderProgress = (status?:any, type?:any) =>
+	{
+		if (status && type)
+		{
+			return <Progress percent={percent} status={status} strokeColor={strokeColor} type={type} />;
+		} if (status)
+		{
+			return <Progress percent={percent} status={status} strokeColor={strokeColor} type='line' />;
+		} if (type)
+		{
+			return <Progress percent={percent} strokeColor={strokeColor} type={type} />;
+		} return <></>;
+	};
 
-  return (
-    renderProgress(status, type)
-  );
+	return (
+		renderProgress(status, type)
+	);
 };
 
 export default ProgressBar;
 
 const strokeColor = {
-  '0%': '#108ee9',
-  '100%': '#87d068',
+	'0%': '#108ee9',
+	'100%': '#87d068'
 };

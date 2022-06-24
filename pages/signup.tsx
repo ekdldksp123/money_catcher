@@ -1,7 +1,28 @@
-import type { NextPage } from 'next';
+/**
+ * 회원가입 페이지 컴포넌트
+ *
+ * @author punchlips97
+ * @since 2022.06.22 Tue 02:04:00
+ */
 
-import SignUpView from '@/views/Signup';
+import classNames from 'classnames/bind';
 
-const SignUp: NextPage = () => <SignUpView />;
+import styles from './signup.module.scss';
 
-export default SignUp;
+import SignupForm from '@/molecules/SignupForm';
+
+/**
+ * 회원가입 페이지 컴포넌트 JSX 반환 메서드
+ *
+ * @returns {JSX.Element} JSX
+ */
+export default function SignUp(): JSX.Element
+{
+	const cn = classNames.bind(styles);
+
+	return (
+		<section className={cn('signup', 'page')}>
+			<SignupForm />
+		</section>
+	);
+}

@@ -1,23 +1,30 @@
-import classNames from 'classnames/bind';
-import type { NextPage } from 'next';
-import Head from 'next/head';
+/**
+ * 인덱스 페이지 컴포넌트
+ *
+ * @author RWB
+ * @since 2022.06.24 Fri 20:21:12
+ */
 
-import styles from '@/layout/ContainerGroup.module.scss';
+import Chart, { ChartProps } from '@/atom/Chart';
 
-const Home: NextPage = () =>
+/**
+ * 인덱스 페이지 컴포넌트 JSX 반환 메서드
+ *
+ * @returns {JSX.Element} JSX
+ */
+export default function Index(): JSX.Element
 {
-	const cn = classNames.bind(styles);
+	const chartProps:ChartProps = {
+		props: [
+			{ amount: 10000000, name: '미래에셋' },
+			{ amount: 20000000, name: '신한' },
+			{ amount: 25000000, name: '키움' },
+			{ amount: 30000000, name: '나무' }
+		]
+	};
 	return (
-		<div>
-			<Head>
-				<title>Create Next App</title>
-				<meta content='Created by MayB' name='description' />
-			</Head>
-			<section className={cn('container-center')}>
-				Main
-			</section>
-		</div>
+		<section className='page'>
+			<Chart props={chartProps.props} />
+		</section>
 	);
-};
-
-export default Home;
+}

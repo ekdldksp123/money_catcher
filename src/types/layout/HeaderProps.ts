@@ -3,6 +3,7 @@ export interface Props {
 }
 
 export interface Item {
-	name: string;
-	path: string;
+	name: string
+	path: string
+	icon: JSX.Element
 }

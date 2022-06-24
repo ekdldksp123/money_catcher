@@ -37,32 +37,37 @@ const SignUpForm:React.FC = () =>
 	const cn = classNames.bind(formStyles);
 
 	return (
-		<section className={cn('form')}>
-			<h1 className={cn('title')}>SignUp</h1>
+		<form className={cn('form')}>
+			<h1 className={cn('title')}>회원가입</h1>
+
 			<input
 				className={cn('input')}
 				name='id'
 				placeholder='ID'
 				type='text'
 			/>
+
 			<input
 				className={cn('input')}
 				name='password'
 				placeholder='Password'
 				type='password'
 			/>
+
 			<input
 				className={cn('input')}
 				name='name'
 				placeholder='Name'
 				type='text'
 			/>
+
 			<div className={cn('select-box')}>
 				<select className={cn('select')} placeholder='BirthYear'>
 					<option key='0-birthYear}'>BirthYear</option>
 					{ birthYears.map((v, i) => <option key={`${i + 1}-birthYear`}>{v}</option>)}
 				</select>
 			</div>
+
 			<div className={cn('select-box')}>
 				<select className={cn('select')} placeholder='Gender'>
 					<option>Gender</option>
@@ -71,6 +76,7 @@ const SignUpForm:React.FC = () =>
 					<option>Unknown</option>
 				</select>
 			</div>
+
 			<div className={cn('select-box')}>
 				<select className={cn('select')} placeholder='Address'>
 					<option>Address</option>
@@ -80,12 +86,13 @@ const SignUpForm:React.FC = () =>
 					<option>경상도</option>
 				</select>
 			</div>
+
 			<button
 				className={bn('form-button')}
 				onClick={() => onSubmit()}
 			>
 				SignUp
 			</button>
-		</section>
+		</form>
 	);
 };

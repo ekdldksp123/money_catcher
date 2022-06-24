@@ -1,18 +1,30 @@
 @import '../animation.scss';
-@import '../common.scss';
+
+.sidebar-wrapper {
+	position: fixed;
+	top: var(--header-height);
+	left: 0px;
+
+	background: rgba($color: white, $alpha: 0.3);
+	backdrop-filter: blur(5px);
+
+	z-index: 15;
+
+	width: var(--web-width);
+	height: var(--web-height);
+}
 
 .sidebar {
 	$width: 230px;
-	$height: 70px;
 
 	position: fixed;
-	top: $height;
+	top: var(--header-height);
 	right: -$width;
 	background-color: white;
-	border-left: 1px solid gainsboro;
-	box-shadow: -3px 3px 5px gainsboro;
+	border-left: 2px solid whitesmoke;
 	width: $width;
-	height: calc(100% - $height);
+	height: calc(100% - var(--header-height));
+	z-index: 16;
 
 	&.open {
 		@include slide-in-animation($width);
@@ -38,9 +50,12 @@
 }
 
 .link {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
 	color: grey;
-	border-bottom: 1px solid gainsboro;
-	padding: 15px;
+	padding: 10px 20px;
 	text-decoration: none;
 	transition: 0.3s;
 
@@ -49,10 +64,10 @@
 	}
 
 	&.active {
-		color: $primary;
+		color: var(--primary);
 	}
 }
 
 .hamburger {
-	color: $primary;
+	color: darkgrey;
 }

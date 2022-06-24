@@ -29,9 +29,14 @@ export default function MobileNav({ menuList, className, ...props }: NavProps): 
 
 	const [ isOpen, setOpen ] = useState(undefined as boolean | undefined);
 
-	const menu = menuList.map(({ name, path }, index) => (
+	const handleClose = () => setOpen(false);
+
+	const menu = menuList.map(({ icon, name, path }, index) => (
 		<Link href={path} key={`mobile-nav-item-${index}`} passHref>
-			<a className={cn('link', router?.pathname === path && 'active')} href='#replace'>{name}</a>
+			<a className={cn('link', router?.pathname === path && 'active')} href='#replace' onClick={handleClose}>
+				<span>{icon}</span>
+				<span>{name}</span>
+			</a>
 		</Link>
 	));
 
@@ -41,12 +46,14 @@ export default function MobileNav({ menuList, className, ...props }: NavProps): 
 				className={cn('switch', isOpen !== undefined && isOpen ? 'open' : 'close')}
 				onClick={() => setOpen(!isOpen)}
 			>
-				{isOpen ? <IoCloseOutline className={cn('hamburger')} /> : <IoMenuOutline className={cn('hamburger')} />}
+				{isOpen ? <IoCloseOutline className={cn('hamburger')} size={24} /> : <IoMenuOutline className={cn('hamburger')} size={24} />}
 			</button>
 
 			<aside className={cn('sidebar', isOpen !== undefined && (isOpen ? 'open' : 'close'), className)} {...props}>
 				<nav className={cn('mobile-nav')}>{menu}</nav>
 			</aside>
+
+			{isOpen ? <aside className={cn('sidebar-wrapper')} onClick={handleClose} /> : null}
 		</>
 	);
 }

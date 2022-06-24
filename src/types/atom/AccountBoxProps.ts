@@ -6,8 +6,9 @@
  */
 
 import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
+import { User } from 'src/common/env';
 
 export interface AccountBoxProps extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
 {
-	hasLogin?: boolean
+	user?: User
 }

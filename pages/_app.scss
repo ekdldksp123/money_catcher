@@ -1,0 +1,28 @@
+@import '../src/components/_common';
+
+:root {
+	--primary: dodgerblue;
+
+	// 웹 페이지 사이즈
+	--web-width: 414px;
+	--web-height: 896px;
+
+	--header-height: 50px;
+
+	--font-size: 14px;
+}
+
+html,
+body {
+	margin: 0px;
+	padding: 0px;
+
+	min-width: var(--web-width);
+	min-height: var(--web-height);
+
+	font-size: var(--font-size);
+
+	section.page {
+		padding-top: var(--header-height);
+	}
+}

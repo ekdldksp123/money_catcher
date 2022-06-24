@@ -23,7 +23,7 @@ export default function Loading({ hasLoading }: LoadingProps): JSX.Element | nul
 {
 	const cn = classNames.bind(styles);
 
-	return hasLoading && (
+	return hasLoading ? (
 		<div className={cn('loading-dimmer')}>
 			<div className={cn('loading')}>
 				<div className={cn('icon-wrapper', 'main')}>
@@ -35,5 +35,5 @@ export default function Loading({ hasLoading }: LoadingProps): JSX.Element | nul
 				</div>
 			</div>
 		</div>
-	);
+	) : null;
 }

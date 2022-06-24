@@ -8,16 +8,18 @@
     cursor: pointer;
     margin: 20px;
     height: 55px;
-    text-align:center;
+    text-align: center;
     border: none;
     background-size: 300% 100%;
-    background-image: linear-gradient(to right, #00DECC, #00A1FC);
+    background: linear-gradient(to right, #00DECC, #00A1FC);
     box-shadow: 0 4px 15px 0 rgb(36 199 218 / 75%);
     border-radius: 50px;
+    transition: all .4s ease-in-out;
 
     &:hover {
-        background-position: 100% 0;
-        transition: all .4s ease-in-out;
+        border: 1px solid #00DECC;
+        color: #00DECC;
+        background: transparent;
     }
 
     &:focus {

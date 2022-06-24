@@ -13,15 +13,21 @@ import styles from './AccountBox.module.scss';
 
 import { AccountBoxProps } from '@/types/atom/AccountBoxProps';
 
-export default function AccountBox({ hasLogin, className, ...props }: AccountBoxProps): JSX.Element
+/**
+ * 계정 박스 컴포넌트 JSX 반환 메서드
+ *
+ * @param {AccountBoxProps} param0: AccountBoxProps
+ *
+ * @returns {JSX.Element} JSX
+ */
+export default function AccountBox({ user, className, ...props }: AccountBoxProps): JSX.Element
 {
 	const cn = classNames.bind(styles);
 
 	return (
-		<Link href={hasLogin ? '/mypage' : '/login'} passHref>
+		<Link href={user ? '/mypage' : '/login'} passHref>
 			<a className={cn('account-box', className)} href='#replace' {...props}>
-				{hasLogin ? <img alt='account' className={cn('image')} src='http://via.placeholder.com/50x50' /> : <FaUser color='#24CAEA' />}
-				{hasLogin ? '테스트' : '로그인'}
+				{user ? <img alt='account' className={cn('image')} src={user.avatar} /> : <FaUser />}
 			</a>
 		</Link>
 	);

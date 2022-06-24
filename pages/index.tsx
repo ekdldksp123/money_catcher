@@ -1,23 +1,20 @@
-import classNames from 'classnames/bind';
-import type { NextPage } from 'next';
-import Head from 'next/head';
+/**
+ * 인덱스 페이지 컴포넌트
+ *
+ * @author RWB
+ * @since 2022.06.24 Fri 20:21:12
+ */
 
-import styles from '@/layout/ContainerGroup.module.scss';
-
-const Home: NextPage = () =>
+/**
+ * 인덱스 페이지 컴포넌트 JSX 반환 메서드
+ *
+ * @returns {JSX.Element} JSX
+ */
+export default function Index(): JSX.Element
 {
-	const cn = classNames.bind(styles);
 	return (
-		<div>
-			<Head>
-				<title>Create Next App</title>
-				<meta content='Created by MayB' name='description' />
-			</Head>
-			<section className={cn('container-center')}>
-				Main
-			</section>
-		</div>
+		<section className='page'>
+			Index
+		</section>
 	);
-};
-
-export default Home;
+}

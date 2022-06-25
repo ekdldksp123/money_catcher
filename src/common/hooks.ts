@@ -6,7 +6,7 @@
  */
 
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import { User } from './env';
 
@@ -14,17 +14,19 @@ import { User } from './env';
  * 권한 훅 메서드
  *
  * @param {User} user: User 객체
+ * @param {boolean} flag: 권한 유무 여부
+ * @param {string} url: 이동 대상 URL
  */
-export function useAuth(user: User): void
+export function useAuth(user: User, flag: boolean, url: string = '/login'): void
 {
 	const router = useRouter();
 
 	useEffect(() =>
 	{
-		// 유저 정보가 유효하지 않을 경우
-		if (!user)
+		// 유저 정보가 권한 유무와 같을 경우
+		if ((user === undefined) === !flag)
 		{
-			router.push('/login');
+			router.push(url);
 		}
 	}, []);
 }
@@ -42,7 +44,7 @@ export const useScript = (src:string) =>
 				return;
 			}
 
-			let script:any = document.querySelector(`script[src="${src}"]`);
+			let script = document.querySelector(`script[src="${src}"]`);
 
 			if (!script)
 			{

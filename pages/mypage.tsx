@@ -9,7 +9,7 @@ import classNames from 'classnames/bind';
 import { useRouter } from 'next/router';
 import { FaMoneyBillWave } from 'react-icons/fa';
 import { MdDelete, MdEdit, MdLogout } from 'react-icons/md';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { useAuth } from 'src/common/hooks';
 import { userAtom } from 'src/common/state';
 
@@ -29,7 +29,7 @@ export default function MyPage(): JSX.Element
 	const router = useRouter();
 	const [ userState, setUserState ] = useRecoilState(userAtom);
 
-	useAuth(userState);
+	useAuth(userState, false);
 
 	const handleLogout = () =>
 	{

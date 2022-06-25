@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { meta, user } from 'src/common/env';
+import { useAuth } from 'src/common/hooks';
 import { userAtom } from 'src/common/state';
 
 import styles from './login.module.scss';
@@ -37,22 +38,18 @@ export default function Login(): JSX.Element
 	const [ modalState, setModalState ] = useState<JSX.Element | JSX.Element[] | undefined>(undefined);
 	const [ userState, setUserState ] = useRecoilState(userAtom);
 
-	// 유저 정보가 유효할 경우
-	if (userState)
-	{
-		router.push('/mypage');
-	}
+	useAuth(userState, true, '/mypage');
 
 	const handleClose = () => setModalState(undefined);
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>
 	{
-		const { id, password }: { id: HTMLInputElement, password: HTMLInputElement } = e.currentTarget;
+		const { currentTarget } = e;
 
 		e.preventDefault();
 
 		// 아이디가 다를 경우
-		if (id.value !== user.id)
+		if (currentTarget.id.value !== user.id)
 		{
 			setModalState((
 				<>
@@ -63,7 +60,7 @@ export default function Login(): JSX.Element
 		}
 
 		// 비밀번호가 다를 경우
-		else if (password.value !== user.password)
+		else if (currentTarget.password.value !== user.password)
 		{
 			setModalState((
 				<>

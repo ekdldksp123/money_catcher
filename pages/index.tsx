@@ -5,7 +5,6 @@
  * @since 2022.06.24 Fri 20:21:12
  */
 
-import Modal from '@/atom/Modal';
 import Chart, { ChartProps } from '@/atom/Chart';
 
 /**
@@ -23,8 +22,9 @@ export default function Index(): JSX.Element
 			{ amount: 30000000, name: '나무' }
 		]
 	};
+	console.dir(2342423);
 	return (
-		<section className='page' />
+		<section className='page'>
 			<Chart props={chartProps.props} />
 		</section>
 	);

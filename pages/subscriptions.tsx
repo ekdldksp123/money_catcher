@@ -97,12 +97,12 @@ export default function Subscriptions(): JSX.Element
 						<div className={cn('summary-board')}>
 							<div className={cn('summary-board-row')}>
 								<p className={cn('summary-current')}>{month}월</p>
-								<h4 className={cn('summary-current')}>{currentCosts?.cost || 0}원</h4>
+								<h4 className={cn('summary-current')}>{currentCosts?.cost.toLocaleString('ko-KR') || 0}원</h4>
 							</div>
 
 							<div className={cn('summary-board-row')}>
 								<p />
-								<p>전월 대비 <b className={cn('summary-prev', differ(currentCosts?.cost, prevCosts?.cost) > 0 ? 'up' : 'down')}>{differ(currentCosts?.cost, prevCosts?.cost)}</b>원</p>
+								<p>전월 대비 <b className={cn('summary-prev', differ(currentCosts?.cost, prevCosts?.cost) > 0 ? 'up' : 'down')}>{differ(currentCosts?.cost, prevCosts?.cost).toLocaleString('ko-KR')}</b>원</p>
 							</div>
 						</div>
 					</div>

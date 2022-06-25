@@ -81,7 +81,7 @@ export default function MyPage(): JSX.Element | null
 
 					<div className={cn('user-info-assets-item')}>
 						<span>구독</span>
-						<h4 className={cn('percent', 'safe')}>{costs?.cost || 0}원</h4>
+						<h4 className={cn('percent', 'safe')}>{costs?.cost.toLocaleString('ko-KR') || 0}원</h4>
 					</div>
 				</div>
 			</Screen>

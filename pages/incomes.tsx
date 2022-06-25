@@ -2,14 +2,12 @@ import type { NextPage } from 'next';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { getInAndOutMonthly } from 'src/api/in&out';
 
-import { AssetData } from '@/types/molecules/AssetProps';
+import { AssetData, InAndOutData } from '@/types/molecules/AssetProps';
 import IncomesView from '@/views/Incomes';
-
-const months = Array.from({ length: 12 }, (v, i) => i + 1);
 
 const ExpenseManagement:NextPage = ({ dataList }: InferGetServerSidePropsType<typeof getServerSideProps>) => <IncomesView asset={dataList} />;
 
-const getDataList = (monthly: any, e: number) =>
+const getDataList = (monthly: InAndOutData, e: number) =>
 {
 	const incomeKeyVal = Object.entries(monthly.incomeMap)
 		.map(([ key, value ]) => ({ key, value }));
@@ -33,19 +31,17 @@ const getDataList = (monthly: any, e: number) =>
 
 export const getServerSideProps:GetServerSideProps = async () =>
 {
-	const dataList:AssetData[] = [];
+	const dataList: AssetData[] = [];
 
-	for (const e of months)
+	for (let i = 1; i <= 12; i++)
 	{
-		if (e < 10)
+		const response = await getInAndOutMonthly(i > 9 ? i : `0${i}`);
+
+		if (response !== null)
 		{
-			const one = await getInAndOutMonthly(`0${e}`);
-			dataList.push(...getDataList(one, e));
-		}
-		else
-		{
-			const two = await getInAndOutMonthly(`${e}`);
-			dataList.push(...getDataList(two, e));
+			const assert = getDataList(response, i);
+
+			dataList.push([ ...assert ]);
 		}
 	}
 

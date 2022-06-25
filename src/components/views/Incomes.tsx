@@ -16,13 +16,13 @@ const IncomesView:React.FC<AssetProps> = ({ asset }) =>
 	{
 		setTimeout(() =>
 		{
-			setPushAlert(!pushAlert);
-		}, 3000);
-		console.log('toggle');
-		setTimeout(() =>
-		{
-			setPushAlert(!pushAlert);
-		}, 6000);
+			setPushAlert(true);
+
+			setTimeout(() =>
+			{
+				setPushAlert(false);
+			}, 3000);
+		}, 1500);
 	}, []);
 
 	return (
@@ -33,6 +33,7 @@ const IncomesView:React.FC<AssetProps> = ({ asset }) =>
 					목표 소비 금액: 800,000
 					<br />(달성률 : 50%)
 				</Title>
+
 				<NavTabs asset={asset} />
 
 				<Toast isShow={pushAlert} title='지출 알림' type='info'>
@@ -46,7 +47,6 @@ const IncomesView:React.FC<AssetProps> = ({ asset }) =>
 export default IncomesView;
 
 const Title = styled.h1`
-	font-family: 'Jua', sans-serif;
 	margin: 0;
 	padding-top: 20px;
 	padding-bottom: 20px;

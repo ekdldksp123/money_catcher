@@ -1,0 +1,50 @@
+$pink: #F9BCCA;
+
+@keyframes progressAnimation {
+    0%   { width: 5%; background-color: #F9BCCA; }
+    100% { width: 85%; background-color: #EF476F; }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    margin-bottom: 15px;
+}
+
+.label {
+    width: 20%;
+    color:rgba(109, 105, 105, 0.459);
+    font-size: medium;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    height: 25px;
+    text-align: center;
+    color: antiquewhite;
+}
+
+.progress {
+    padding: 3px;
+    height: 23px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.839);  
+    box-shadow: inset 0 1px 2px rgba(151, 151, 151, 0.25), 0 1px rgba(255, 255, 255, 0.564);
+  }
+  
+.progress-bar {
+    height: 20px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.459), rgba(255, 255, 255, 0.05));
+    transition-timing-function: ease-in-out;
+    transition-property: width, background-color;    
+}
+
+.progress-moved .progress-bar {
+    width: 85%;
+    background-color: #EF476F;  
+    animation: progressAnimation 1s;
+}
+

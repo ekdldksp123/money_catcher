@@ -22,12 +22,12 @@ import { Item } from '@/types/layout/HeaderProps';
 
 const AnonyMenuList: Item[] = [
 	{
-		icon: <FaHome />,
+		icon: <FaHome color='primay' />,
 		name: '홈',
 		path: '/'
 	},
 	{
-		icon: <MdLogin />,
+		icon: <MdLogin color='primay' />,
 		name: '로그인',
 		path: '/login'
 	}

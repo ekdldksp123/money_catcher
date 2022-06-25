@@ -14,7 +14,6 @@ const { TabPane } = Tabs;
 
 const NavTabs: React.FC<AssetProps> = ({ asset }) =>
 {
-	console.dir(asset);
 	return (
 		<Container>
 			<Tabs defaultActiveKey='1' style={{ width: '100%' }}>

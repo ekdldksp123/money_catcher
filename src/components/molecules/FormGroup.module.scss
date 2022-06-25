@@ -2,7 +2,6 @@
 .form {
     z-index: 11;
     width: 85vw;
-    height: 90vh;
     background-color: #fff;
     border-radius: 1.5rem;
     padding: 1em 1.5em;
@@ -82,7 +81,7 @@
     }
 
     &:required {
-        background-color: rgb(211, 240, 250);
+        background-color: rgb(232, 240, 254);
     }
 }
 

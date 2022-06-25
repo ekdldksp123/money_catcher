@@ -47,6 +47,6 @@
 	&.main {
 		@include rotate-animation(0.75s);
 
-		color: $primary;
+		color: var(--primary);
 	}
 }

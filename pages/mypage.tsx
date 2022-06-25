@@ -22,7 +22,7 @@ import Button from '@/atom/Button';
  *
  * @returns {JSX.Element} JSX
  */
-export default function MyPage(): JSX.Element
+export default function MyPage(): JSX.Element | null
 {
 	const cn = classNames.bind(styles);
 

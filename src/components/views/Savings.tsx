@@ -3,6 +3,7 @@ import React from 'react';
 
 import Chart from '@/atom/Chart';
 import CustomProgress from '@/atom/CustomProgressBar';
+import Banner from '@/layout/Banner';
 import containerStyles from '@/layout/ContainerGroup.module.scss';
 import formStyles from '@/molecules/FormGroup.module.scss';
 import { ChartData } from '@/types/atom/ChartProps';
@@ -29,12 +30,22 @@ const SavingsView:React.FC = () =>
 
 	return (
 		<section className='page'>
-			<h1 className={fn('title')}>저축 관리</h1>
-			<Chart props={chartDatas} />
-			<CustomProgress amount={30000000} assetType='투자' />
-			<CustomProgress amount={25000000} assetType='ISA' />
-			<CustomProgress amount={20000000} assetType='주택청약' />
-			<CustomProgress amount={15000000} assetType='적금' />
+			{/* <h1 className={fn('title')}>저축 관리</h1> */}
+			<Banner title='저축 관리' />
+			<section className={fn('container-content')}>
+				<section className={fn('form-with-shadow')}>
+					<Chart props={chartDatas} />
+					<CustomProgress amount={30000000} assetType='투자' />
+					<CustomProgress amount={25000000} assetType='ISA' />
+					<CustomProgress amount={20000000} assetType='주택청약' />
+					<CustomProgress amount={15000000} assetType='적금' />
+				</section>
+			</section>
+			<section className={fn('container-content')}>
+				<section className={fn('form-with-shadow')}>
+					<div>Hello</div>
+				</section>
+			</section>
 		</section>
 	);
 };

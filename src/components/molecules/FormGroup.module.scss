@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 .form {
     z-index: 11;
@@ -17,13 +17,13 @@
 
 .form-with-shadow {
     z-index: 11;
-    margin-top: 40px;
+    margin: 0 auto;
     width: 85vw;
-    height: 90vh;
     background-color: #fff;
     border-radius: 1.5rem;
     padding: 1em 1.5em;
-    box-shadow: rgb(0 0 0 / 35%) 0 5px 5px;
+    box-shadow: rgb(0 0 0 / 35%) 0 5px 8px;
+    margin-bottom: 30px;
 }
 
 .title {

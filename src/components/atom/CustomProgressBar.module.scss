@@ -21,20 +21,22 @@ $pink: #F9BCCA;
 
 .container {
     width: 80%;
+    height: 25px;
     text-align: center;
     color: antiquewhite;
 }
 
 .progress {
     padding: 3px;
-    border-radius: 30px;
+    height: 23px;
+    border-radius: 20px;
     background: rgba(255, 255, 255, 0.839);  
     box-shadow: inset 0 1px 2px rgba(151, 151, 151, 0.25), 0 1px rgba(255, 255, 255, 0.564);
   }
   
 .progress-bar {
-    height: 18px;
-    border-radius: 30px;
+    height: 20px;
+    border-radius: 20px;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.459), rgba(255, 255, 255, 0.05));
     transition-timing-function: ease-in-out;
     transition-property: width, background-color;    

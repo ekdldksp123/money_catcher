@@ -41,7 +41,6 @@ const SavingsView:React.FC = () =>
 					<CustomProgress amount={15000000} assetType='적금' />
 				</section>
 			</section>
-			{/* <section className={cn('container-content')}> */}
 			<section>
 				<h1 className={fn('label')}>올해 받은 세액혜택</h1>
 				<TaxBenefit />

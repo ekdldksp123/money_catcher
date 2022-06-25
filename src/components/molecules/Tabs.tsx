@@ -14,7 +14,6 @@ const { TabPane } = Tabs;
 
 const NavTabs: React.FC<AssetProps> = ({ asset }) =>
 {
-	console.dir(asset);
 	const [ total, setTotal ] = useState<AssetData[]>([]);
 	const [ plus, setPlus ] = useState<AssetData[]>([]);
 	const [ minus, setMinus ] = useState<AssetData[]>([]);

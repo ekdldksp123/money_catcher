@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import React from 'react';
+import { RecommendedData, TaxRecommendation } from 'src/api/mytax_recommenation';
 
 import Chart from '@/atom/Chart';
 import CustomProgress from '@/atom/CustomProgressBar';
@@ -8,8 +9,9 @@ import containerStyles from '@/layout/ContainerGroup.module.scss';
 import formStyles from '@/molecules/FormGroup.module.scss';
 import TaxBenefit from '@/molecules/TaxBenefit';
 import { ChartData } from '@/types/atom/ChartProps';
+import { SavingsProps } from '@/types/atom/TaxBenefitsProps';
 
-const SavingsView:React.FC = () =>
+const SavingsView:React.FC<SavingsProps> = ({ data }) =>
 {
 	const cn = classNames.bind(containerStyles);
 	const fn = classNames.bind(formStyles);
@@ -43,16 +45,48 @@ const SavingsView:React.FC = () =>
 			</section>
 			<section>
 				<h1 className={fn('label')}>올해 받은 세액혜택</h1>
-				<TaxBenefit />
+				<TaxBenefit data={data} />
 			</section>
 			<section>
 				<h1 className={fn('label')}>맞춤형 세금공제 추천</h1>
-				<section className={fn('form-with-shadow')}>
-					<>요긴 시간 될때 하기</>
-				</section>
+				{RecommendedData.map((v: TaxRecommendation, i:number) => (
+					<RecommendationRow
+						companyName={v.financial_company_name}
+						key={i}
+						limit={v.limit}
+						productName={v.product_name}
+						tax={v.tax}
+						taxType={v.tax_type}
+					/>
+				))}
 			</section>
 		</section>
 	);
 };
 
 export default SavingsView;
+
+interface Props {
+	companyName:string;
+	limit: number;
+	productName: string;
+	tax: number;
+	taxType: string;
+}
+
+const RecommendationRow:React.FC<Props> = ({ companyName, limit, productName, taxType, tax }) =>
+{
+	const cn = classNames.bind(containerStyles);
+	const fn = classNames.bind(formStyles);
+
+	return (
+		<section className={fn('form-with-shadow')}>
+			<section className={cn('container-between')}>
+				<p>{`${productName}(${companyName})`}</p>
+				<p>{taxType}</p>
+				<p>{`수수료: ${tax} %`}</p>
+				<p>{`(최대 혜택: ${limit})`}</p>
+			</section>
+		</section>
+	);
+};

@@ -1,13 +1,15 @@
 import { baseApi } from 'src/common/env';
 
 /**
+ *
  * @author vinchaekim
- * @since 2022.06.25
+ * @since 2022.06.26
+ *
  */
 
-export const getInAndOutMonthly = async (month:string) =>
+export const getMyTaxData = async () =>
 {
-	const apiUrl = `${baseApi}/assets/date/2021${month}`;
+	const apiUrl = `${baseApi}/assets/mytax`;
 	const response = await fetch(apiUrl, { method: 'GET' });
 	const json = await response.json();
 

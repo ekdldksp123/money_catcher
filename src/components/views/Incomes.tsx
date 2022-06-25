@@ -18,7 +18,6 @@ const IncomesView:React.FC<AssetProps> = ({ asset }) =>
 		{
 			setPushAlert(!pushAlert);
 		}, 3000);
-		console.log('toggle');
 		setTimeout(() =>
 		{
 			setPushAlert(!pushAlert);

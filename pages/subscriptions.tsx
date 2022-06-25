@@ -111,62 +111,66 @@ export default function Subscriptions(): JSX.Element
 				<Box>
 					<h3 className={cn('box-title')}>구독 현황</h3>
 
-					<table className={cn('list-table')}>
-						<thead>
-							<tr>
-								<th>타입</th>
-								<th>이름</th>
-								<th>목표 횟수</th>
-								<th>사용 횟수</th>
-								<th colSpan={2}>평가</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							{efficiency.length > 0 ? efficiency.map(({ type, name, goal, usage, efficiency, cancel }, index) => (
-								<tr key={`efficiency-${index}`}>
-									<td>{type}</td>
-									<td>{name}</td>
-									<td align='center'>{goal}</td>
-									<td align='center'>{usage}</td>
-									<td align='center'>{efficiency}</td>
-									<td align='center'>{cancel ? <MdWarning color='crimson' /> : null}</td>
-								</tr>
-							)) : (
+					<div className={cn('table-wrapper')}>
+						<table className={cn('list-table')}>
+							<thead>
 								<tr>
-									<td align='center' colSpan={6}>이번 달엔 사용한 내역이 없어요!</td>
+									<th>타입</th>
+									<th>이름</th>
+									<th>목표 횟수</th>
+									<th>사용 횟수</th>
+									<th colSpan={2}>평가</th>
 								</tr>
-							)}
-						</tbody>
-					</table>
+							</thead>
+
+							<tbody>
+								{efficiency.length > 0 ? efficiency.map(({ type, name, goal, usage, efficiency, cancel }, index) => (
+									<tr key={`efficiency-${index}`}>
+										<td>{type}</td>
+										<td>{name}</td>
+										<td align='center'>{goal}</td>
+										<td align='center'>{usage}</td>
+										<td align='center'>{efficiency}</td>
+										<td align='center'>{cancel ? <MdWarning color='crimson' /> : null}</td>
+									</tr>
+								)) : (
+									<tr>
+										<td align='center' colSpan={6}>이번 달엔 사용한 내역이 없어요!</td>
+									</tr>
+								)}
+							</tbody>
+						</table>
+					</div>
 				</Box>
 
 				<Box>
 					<h3 className={cn('box-title')}>구독 추천</h3>
 
-					<table className={cn('list-table')}>
-						<thead>
-							<tr>
-								<th>타입</th>
-								<th>이름</th>
-								<th>사용 횟수</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							{recommendation.length > 0 ? recommendation.map(({ type, name, usage, url }, index) => (
-								<tr className={cn('clickable')} key={`recommendation-${index}`} onClick={() => window.open(url)}>
-									<td>{type}</td>
-									<td>{name}</td>
-									<td align='center'>{usage}</td>
-								</tr>
-							)) : (
+					<div className={cn('table-wrapper')}>
+						<table className={cn('list-table')}>
+							<thead>
 								<tr>
-									<td>이번 달엔 사용한 내역이 없어요!</td>
+									<th>타입</th>
+									<th>이름</th>
+									<th>사용 횟수</th>
 								</tr>
-							)}
-						</tbody>
-					</table>
+							</thead>
+
+							<tbody>
+								{recommendation.length > 0 ? recommendation.map(({ type, name, usage, url }, index) => (
+									<tr className={cn('clickable')} key={`recommendation-${index}`} onClick={() => window.open(url)}>
+										<td>{type}</td>
+										<td>{name}</td>
+										<td align='center'>{usage}</td>
+									</tr>
+								)) : (
+									<tr>
+										<td>이번 달엔 사용한 내역이 없어요!</td>
+									</tr>
+								)}
+							</tbody>
+						</table>
+					</div>
 				</Box>
 			</div>
 

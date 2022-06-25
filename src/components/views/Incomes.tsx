@@ -1,77 +1,61 @@
-import { Table } from 'antd';
-import classNames from 'classnames/bind';
-import React from 'react';
+import 'antd/dist/antd.css';
 
-import containerStyles from '@/layout/ContainerGroup.module.scss';
-import formStyles from '@/molecules/FormGroup.module.scss';
+import styled from '@emotion/styled';
+import React, { useEffect, useState } from 'react';
 
-const IncomesView:React.FC = () =>
+import Toast from '@/atom/Toast';
+import Banner from '@/layout/Banner';
+import NavTabs from '@/molecules/Tabs';
+import { AssetProps } from '@/types/molecules/AssetProps';
+
+import Toast from '@/atom/Toast';
+import Banner from '@/layout/Banner';
+import NavTabs from '@/molecules/Tabs';
+import { AssetProps } from '@/types/molecules/AssetProps';
+
+const IncomesView:React.FC<AssetProps> = ({ asset }) =>
 {
-	const fn = classNames.bind(containerStyles);
-	const cn = classNames.bind(formStyles);
-	const columns = [
-		{
-			dataIndex: 'name',
-			title: 'Name'
-		},
-		{
-			dataIndex: 'borrow',
-			title: 'Borrow'
-		},
-		{
-			dataIndex: 'repayment',
-			title: 'Repayment'
-		}
-	];
-	const data = [
-		{
-			borrow: 10,
-			key: '1',
-			name: 'John Brown',
-			repayment: 33
-		},
-		{
-			borrow: 100,
-			key: '2',
-			name: 'Jim Green',
-			repayment: 0
-		},
-		{
-			borrow: 10,
-			key: '3',
-			name: 'Joe Black',
-			repayment: 10
-		},
-		{
-			borrow: 75,
-			key: '4',
-			name: 'Jim Red',
-			repayment: 45
-		}
-	];
+	const [ pushAlert, setPushAlert ] = useState<boolean>(false);
 
-	const fixedData = [];
-
-	for (let i = 0; i < 20; i += 1)
+	useEffect(() =>
 	{
-		fixedData.push({
-			description: 'Everything that has a beginning, has an end.',
-			key: i,
-			name: [ 'Light', 'Bamboo', 'Little' ][i % 3]
-		});
-	}
+		setTimeout(() =>
+		{
+			setPushAlert(!pushAlert);
+		}, 3000);
+		console.log('toggle');
+		setTimeout(() =>
+		{
+			setPushAlert(!pushAlert);
+		}, 6000);
+	}, []);
+
 	return (
-		<section className={fn('container-center')}>
-			<h1 className={cn('title')}>지출 관리</h1>
-			<Table
-				columns={columns}
-				dataSource={data}
-				pagination={false}
-				style={{ width: '80%' }}
-				bordered
-			/>
-		</section>
+		<>
+			<section className='page'>
+				<Banner title='지출 관리' />
+				<Title>
+					목표 소비 금액: 800,000
+					<br />(달성률 : 50%)
+				</Title>
+				<NavTabs asset={asset} />
+
+				<Toast isShow={pushAlert} title='지출 알림' type='info'>
+					목표 지출 금액이 150,000원 남았습니다
+				</Toast>
+			</section>
+		</>
 	);
 };
 
 export default IncomesView;
+
+const Title = styled.h1`
+	font-family: 'Jua', sans-serif;
+	margin: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: var(--primary);
+	text-align: center;
+	font-size: 30px;
+`;

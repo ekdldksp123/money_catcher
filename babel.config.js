@@ -1,7 +1,6 @@
 module.exports = {
 	plugins: [
 		[
-			"@emotion/babel-plugin",
 			'module-resolver',
 			{
 				alias: {
@@ -27,12 +26,6 @@ module.exports = {
 	presets: [
 		"@babel/preset-env",
         "@babel/preset-react",
-		'next/babel',
-		{
-			"preset-react": {
-			  "runtime": "automatic",
-			  "importSource": "@emotion/react"
-			}
-		}
+		'next/babel'
 	]
 };

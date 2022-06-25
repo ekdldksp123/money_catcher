@@ -42,16 +42,22 @@ const NavTabs: React.FC<AssetProps> = ({ asset }) => (
 				})}
 			</TabPane>
 			<TabPane key='3' tab={<span><PlusCircleOutlined />수입</span>}>
-				{asset.map((item: AssetData[]) =>
-				{
-					const incomeTsx = item[0].data.map(({ key, value }, index) => <OneWayRow amount={value} key={index} month={item[0].month} type={key} />);
-
-					return (
-						<>
-							{incomeTsx}
-						</>
-					);
-				})}
+				<OneWayRow amount={3000000} month={1} type='월급' />
+				<OneWayRow amount={150000} month={1} type='기타' />
+				<OneWayRow amount={3000000} month={2} type='월급' />
+				<OneWayRow amount={500000} month={1} type='투자' />
+				<OneWayRow amount={3000000} month={3} type='월급' />
+				<OneWayRow amount={3000000} month={4} type='월급' />
+				<OneWayRow amount={3000000} month={5} type='월급' />
+				<OneWayRow amount={300000} month={6} type='투자' />
+				<OneWayRow amount={3000000} month={6} type='월급' />
+				<OneWayRow amount={3000000} month={7} type='월급' />
+				<OneWayRow amount={3000000} month={8} type='월급' />
+				<OneWayRow amount={3000000} month={9} type='월급' />
+				<OneWayRow amount={220000} month={10} type='기타' />
+				<OneWayRow amount={3000000} month={10} type='월급' />
+				<OneWayRow amount={3000000} month={11} type='월급' />
+				<OneWayRow amount={3000000} month={12} type='월급' />
 			</TabPane>
 		</Tabs>
 	</Container>

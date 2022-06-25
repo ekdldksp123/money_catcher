@@ -42,6 +42,7 @@ export default function Subscriptions(): JSX.Element
 	const currentCosts = useGetCost(year, month);
 	const prevCosts = useGetCost(year, month - 1);
 	const recommendation = useGetRecommendation(year, month);
+
 	const efficiency = useGetEfficiency(year, month);
 
 	const [ modalState, setModalState ] = useState<JSX.Element | JSX.Element[] | undefined>(undefined);

@@ -21,11 +21,11 @@ const TaxBenefitData:React.FC<Props> = ({ logo, title, amount, max }) =>
 
 	return (
 		<section className={fn('form-with-shadow')}>
-			<section className={cn('container-between')}>
-				<img alt='pension' className={cn('logo')} src={logo} />
-				<p>{title}</p>
-				<p>{amount}</p>
-				<p>{`(최대 공제 가능: ${max})`}</p>
+			<section className={cn('custom-between')}>
+				<img alt='pension' className={cn('logo', 'width1')} src={logo} />
+				<p align='center' className={cn('width3')}>{title}</p>
+				<p className={cn('width3')}>{amount.toLocaleString('ko-KR')}</p>
+				<p className={cn('width2')}>{`(최대 공제 가능: ${max.toLocaleString('ko-KR')})`}</p>
 			</section>
 		</section>
 	);

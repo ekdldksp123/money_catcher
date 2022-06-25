@@ -81,11 +81,11 @@ const RecommendationRow:React.FC<Props> = ({ companyName, limit, productName, ta
 
 	return (
 		<section className={fn('form-with-shadow')}>
-			<section className={cn('container-between')}>
-				<p>{`${productName}(${companyName})`}</p>
-				<p>{taxType}</p>
-				<p>{`수수료: ${tax} %`}</p>
-				<p>{`(최대 혜택: ${limit})`}</p>
+			<section className={cn('custom-between')}>
+				<p className={cn('width5')}>{`${productName}(${companyName})`}</p>
+				<p align='center' className={cn('width4')}>{taxType}</p>
+				<p align='center' className={cn('width5')}>{`수수료: ${tax.toLocaleString('ko-KR')} %`}</p>
+				<p className={cn('width2')}>{`(최대 혜택: ${limit.toLocaleString('ko-KR')})`}</p>
 			</section>
 		</section>
 	);

@@ -7,3 +7,26 @@
     flex-direction: column;
     box-sizing: border-box;
 }
+
+.container-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-between {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    color: #626262;
+    vertical-align: middle;
+    font-size: large;
+
+    .logo {
+        --size: 45px;
+    
+        width: var(--size);
+        height: var(--size);
+    }
+}

@@ -2,14 +2,7 @@ import React, { useEffect } from 'react';
 import { useScript } from 'src/common/hooks';
 import { setChartData, renderChart } from 'src/libs/chart.js';
 
-export type ChartProps = {
-    props: ChartData[]
-}
-
-export type ChartData = {
-    name: string;
-    amount: number;
-}
+import { ChartProps } from '@/types/atom/ChartProps';
 
 const Chart: React.FC<ChartProps> = ({ props }) =>
 {
@@ -19,7 +12,6 @@ const Chart: React.FC<ChartProps> = ({ props }) =>
 	{
 		const config = setChartData(props);
 		renderChart(config);
-		console.dir(config);
 	};
 
 	useEffect(() =>
@@ -30,7 +22,7 @@ const Chart: React.FC<ChartProps> = ({ props }) =>
 		}
 	}, [ status ]);
 
-	return <canvas id='myChart' />;
+	return <canvas id='myChart' style={{ marginBottom: '40px' }} />;
 };
 
 export default Chart;

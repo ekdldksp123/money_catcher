@@ -1,5 +1,7 @@
 import { NextPage } from 'next';
 
-const Savings:NextPage = () => <>Savings</>;
+import SavingsView from '@/views/Savings';
+
+const Savings:NextPage = () => <SavingsView />;
 
 export default Savings;

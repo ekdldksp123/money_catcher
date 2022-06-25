@@ -1,12 +1,25 @@
 $pink: #F9BCCA;
 
-
 @keyframes progressAnimation {
-    0%   { width: 10%; background-color: #F9BCCA; }
+    0%   { width: 5%; background-color: #F9BCCA; }
     100% { width: 85%; background-color: #EF476F; }
 }
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    margin-bottom: 15px;
+}
+
+.label {
+    width: 20%;
+    color:rgba(109, 105, 105, 0.459);
+    font-size: medium;
+    text-align: center;
+}
+
 .container {
-    margin: 100px auto;
     width: 80%;
     text-align: center;
     color: antiquewhite;
@@ -22,15 +35,14 @@ $pink: #F9BCCA;
 .progress-bar {
     height: 18px;
     border-radius: 30px;
-    background-image: 
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.459), rgba(255, 255, 255, 0.05));
-    transition: 1000ms ease-in-out;  
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.459), rgba(255, 255, 255, 0.05));
+    transition-timing-function: ease-in-out;
     transition-property: width, background-color;    
 }
 
 .progress-moved .progress-bar {
-    width: 85%; 
+    width: 85%;
     background-color: #EF476F;  
-    animation: progressAnimation 6s;
+    animation: progressAnimation 1s;
 }
 

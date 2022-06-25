@@ -22,7 +22,7 @@ const Chart: React.FC<ChartProps> = ({ props }) =>
 		}
 	}, [ status ]);
 
-	return <canvas id='myChart' />;
+	return <canvas id='myChart' style={{ marginBottom: '40px' }} />;
 };
 
 export default Chart;

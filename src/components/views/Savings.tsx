@@ -6,6 +6,7 @@ import CustomProgress from '@/atom/CustomProgressBar';
 import Banner from '@/layout/Banner';
 import containerStyles from '@/layout/ContainerGroup.module.scss';
 import formStyles from '@/molecules/FormGroup.module.scss';
+import TaxBenefit from '@/molecules/TaxBenefit';
 import { ChartData } from '@/types/atom/ChartProps';
 
 const SavingsView:React.FC = () =>
@@ -30,9 +31,8 @@ const SavingsView:React.FC = () =>
 
 	return (
 		<section className='page'>
-			{/* <h1 className={fn('title')}>저축 관리</h1> */}
 			<Banner title='저축 관리' />
-			<section className={fn('container-content')}>
+			<section className={cn('container-content')}>
 				<section className={fn('form-with-shadow')}>
 					<Chart props={chartDatas} />
 					<CustomProgress amount={30000000} assetType='투자' />
@@ -41,9 +41,15 @@ const SavingsView:React.FC = () =>
 					<CustomProgress amount={15000000} assetType='적금' />
 				</section>
 			</section>
-			<section className={fn('container-content')}>
+			{/* <section className={cn('container-content')}> */}
+			<section>
+				<h1 className={fn('label')}>올해 받은 세액혜택</h1>
+				<TaxBenefit />
+			</section>
+			<section>
+				<h1 className={fn('label')}>맞춤형 세금공제 추천</h1>
 				<section className={fn('form-with-shadow')}>
-					<div>Hello</div>
+					<>요기는 시간 남으면!!!</>
 				</section>
 			</section>
 		</section>

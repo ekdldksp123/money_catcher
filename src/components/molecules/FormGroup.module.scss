@@ -1,6 +1,4 @@
 
-//@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-
 .form {
     z-index: 11;
     width: 85vw;
@@ -23,7 +21,7 @@
     border-radius: 1.5rem;
     padding: 1em 1.5em;
     box-shadow: rgb(0 0 0 / 35%) 0 5px 8px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .title {
@@ -37,11 +35,13 @@
 }
 
 .label {
-    position: relative;
-    top: 20%;
-    font-weight: bold;
-    font-size: 1.35rem;
-    color: #616161;
+    font-family: 'Jua', sans-serif;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--primary);
+    text-align: center;
+    font-size: 30px;
 }
 
 .input {

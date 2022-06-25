@@ -20,13 +20,17 @@
     justify-content: space-between;
     align-items:center;
     color: #626262;
-    vertical-align: middle;
+    vertical-align: text-bottom;
     font-size: large;
 
     .logo {
-        --size: 45px;
+        --size: 40px;
     
         width: var(--size);
         height: var(--size);
+    }
+
+    p {
+        margin: 0;
     }
 }

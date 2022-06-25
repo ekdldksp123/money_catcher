@@ -81,3 +81,5 @@ export const user: User = {
 	name: '테스트',
 	password: 'test1234'
 };
+
+export const baseApi = 'http://ec2-3-34-47-134.ap-northeast-2.compute.amazonaws.com:8080';

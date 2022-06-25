@@ -55,6 +55,7 @@ module.exports = {
 		'no-param-reassign': 'off',
 		'no-plusplus': 'off',
 		'no-restricted-exports': 'off',
+		'no-restricted-syntax': 'off',
 		'no-return-assign': 'off',
 		'no-shadow': 'off',
 		'no-tabs': [ 'error', { allowIndentationTabs: true }],

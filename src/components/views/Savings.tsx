@@ -48,7 +48,7 @@ const SavingsView:React.FC = () =>
 			<section>
 				<h1 className={fn('label')}>맞춤형 세금공제 추천</h1>
 				<section className={fn('form-with-shadow')}>
-					<>요기는 시간 남으면!!!</>
+					<>요긴 시간 될때 하기</>
 				</section>
 			</section>
 		</section>

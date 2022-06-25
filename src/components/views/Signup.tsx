@@ -87,6 +87,19 @@ const SignUpForm:React.FC = () =>
 				</select>
 			</div>
 
+			<div className={ln('bank-wrapper')}>
+				<button>d</button>
+				<button>d</button>
+				<button>d</button>
+				<button>d</button>
+				<button>d</button>
+				<button>d</button>
+				<button>d</button>
+				<button>d</button>
+				<button>d</button>
+				<button>d</button>
+			</div>
+
 			<button
 				className={bn('form-button')}
 				onClick={() => onSubmit()}

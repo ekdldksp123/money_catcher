@@ -127,6 +127,28 @@ export default function SignupForm(): JSX.Element
 					</select>
 				</div>
 
+				<div className={fn('select-box')}>
+					<select className={fn('select')} placeholder='Address'>
+						<option>Bank</option>
+						<option>KB국민은행</option>
+						<option>KEB하나은행</option>
+						<option>신한은행</option>
+						<option>우리은행</option>
+						<option>NH은행</option>
+						<option>IBK기업은행</option>
+						<option>KDB산업은행</option>
+						<option>한국씨티은행</option>
+						<option>SC제일은행</option>
+						<option>BNK부산은행</option>
+						<option>DGB대구은행</option>
+						<option>BNK경남은행</option>
+						<option>SH수협은행</option>
+						<option>광주은행</option>
+						<option>전북은행</option>
+						<option>제주은행</option>
+					</select>
+				</div>
+
 				<button className={bn('form-button')}>회원가입</button>
 			</form>
 

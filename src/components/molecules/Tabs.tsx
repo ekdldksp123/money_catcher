@@ -12,54 +12,50 @@ import { AssetData, AssetProps } from '@/types/molecules/AssetProps';
 
 const { TabPane } = Tabs;
 
-const NavTabs: React.FC<AssetProps> = ({ asset }) =>
-{
-	console.dir(asset);
-	return (
-		<Container>
-			<Tabs defaultActiveKey='1' style={{ width: '100%' }}>
-				<TabPane key='1' tab={<span><StarOutlined />전체</span>}>
-					{asset.map((item: AssetData[]) =>
-					{
-						const incomeTsx = item[0].data.map(({ key, value }, index) => <TwoWayRow amount={value} division={item[0].type === 'spend' ? '지출' : '수입'} key={index} month={item[0].month} type={key} />);
-						const spendTsx = item[1].data.map(({ key, value }, index) => <TwoWayRow amount={value} division={item[1].type === 'spend' ? '지출' : '수입'} key={index} month={item[1].month} type={key} />);
+const NavTabs: React.FC<AssetProps> = ({ asset }) => (
+	<Container>
+		<Tabs defaultActiveKey='1' style={{ width: '100%' }}>
+			<TabPane key='1' tab={<span><StarOutlined />전체</span>}>
+				{asset.map((item: AssetData[]) =>
+				{
+					const incomeTsx = item[0].data.map(({ key, value }, index) => <TwoWayRow amount={value} division={item[0].type === 'spend' ? '지출' : '수입'} key={index} month={item[0].month} type={key} />);
+					const spendTsx = item[1].data.map(({ key, value }, index) => <TwoWayRow amount={value} division={item[1].type === 'spend' ? '지출' : '수입'} key={index} month={item[1].month} type={key} />);
 
-						return (
-							<>
-								{incomeTsx}
-								{spendTsx}
-							</>
-						);
-					})}
-				</TabPane>
-				<TabPane key='2' tab={<span><MinusCircleOutlined />지출</span>}>
-					{asset.map((item: AssetData[]) =>
-					{
-						const spendTsx = item[1].data.map(({ key, value }, index) => <OneWayRow amount={value} key={index} month={item[1].month} type={key} />);
+					return (
+						<>
+							{incomeTsx}
+							{spendTsx}
+						</>
+					);
+				})}
+			</TabPane>
+			<TabPane key='2' tab={<span><MinusCircleOutlined />지출</span>}>
+				{asset.map((item: AssetData[]) =>
+				{
+					const spendTsx = item[1].data.map(({ key, value }, index) => <OneWayRow amount={value} key={index} month={item[1].month} type={key} />);
 
-						return (
-							<>
-								{spendTsx}
-							</>
-						);
-					})}
-				</TabPane>
-				<TabPane key='3' tab={<span><PlusCircleOutlined />수입</span>}>
-					{asset.map((item: AssetData[]) =>
-					{
-						const incomeTsx = item[0].data.map(({ key, value }, index) => <OneWayRow amount={value} key={index} month={item[0].month} type={key} />);
+					return (
+						<>
+							{spendTsx}
+						</>
+					);
+				})}
+			</TabPane>
+			<TabPane key='3' tab={<span><PlusCircleOutlined />수입</span>}>
+				{asset.map((item: AssetData[]) =>
+				{
+					const incomeTsx = item[0].data.map(({ key, value }, index) => <OneWayRow amount={value} key={index} month={item[0].month} type={key} />);
 
-						return (
-							<>
-								{incomeTsx}
-							</>
-						);
-					})}
-				</TabPane>
-			</Tabs>
-		</Container>
-	);
-};
+					return (
+						<>
+							{incomeTsx}
+						</>
+					);
+				})}
+			</TabPane>
+		</Tabs>
+	</Container>
+);
 
 export default NavTabs;
 

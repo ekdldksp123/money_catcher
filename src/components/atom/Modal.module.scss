@@ -23,6 +23,7 @@
     background-color: white;
     box-shadow: 0px 0px 15px grey;
 
+    max-width: 80%;
     min-width: 240px;
 
     overflow: hidden;
@@ -41,7 +42,9 @@
 }
 
 .modal-body {
-    padding: 8px 25px;
+    display: flex;
+
+    padding: 20px 25px;
     text-align: center;
 
     color: grey;

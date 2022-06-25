@@ -21,6 +21,7 @@ module.exports = {
 			objectsInArrays: false
 		}],
 		'brace-style': [ 'error', 'allman' ],
+		'class-methods-use-this': 'off',
 		'comma-dangle': [ 'error', 'never' ],
 		'eol-last': [ 'error', 'never' ],
 		'import/extensions': 'off',

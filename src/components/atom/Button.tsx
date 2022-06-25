@@ -18,11 +18,11 @@ import { ButtonProps } from '@/types/atom/ButtonProps';
  *
  * @returns {JSX.Element} JSX
  */
-export default function Button({ border = 'basic', color = 'basic', outline, ...props }: ButtonProps): JSX.Element
+export default function Button({ border = 'basic', color = 'basic', outline, className, ...props }: ButtonProps): JSX.Element
 {
 	const cn = classNames.bind(styles);
 
 	return (
-		<button className={cn('button', `border-${border}`, `color-${color}`, outline ? 'outline' : undefined)} {...props} />
+		<button className={cn('button', `border-${border}`, `color-${color}`, outline ? 'outline' : undefined, className)} {...props} />
 	);
 }

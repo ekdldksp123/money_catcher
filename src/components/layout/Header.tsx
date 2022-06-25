@@ -10,7 +10,7 @@ import React from 'react';
 import { FaHome } from 'react-icons/fa';
 import { MdLogin } from 'react-icons/md';
 import { useRecoilValue } from 'recoil';
-import { title } from 'src/common/env';
+import { meta } from 'src/common/env';
 import { userAtom } from 'src/common/state';
 
 import styles from './Header.module.scss';
@@ -40,18 +40,23 @@ const userMenuList: Item[] = [
 	},
 	{
 		icon: <FaHome />,
-		name: 'My 지출 관리',
+		name: '지출 관리',
 		path: '/incomes'
 	},
 	{
 		icon: <FaHome />,
-		name: 'My 저축 관리',
+		name: '저축 관리',
 		path: '/savings'
 	},
 	{
 		icon: <FaHome />,
-		name: 'My 구독 관리',
+		name: '구독 관리',
 		path: '/subscriptions'
+	},
+	{
+		icon: <FaHome />,
+		name: '마이페이지',
+		path: '/mypage'
 	}
 ];
 
@@ -65,9 +70,14 @@ export default function Header(): JSX.Element
 	const cn = classNames.bind(styles);
 	const userState = useRecoilValue(userAtom);
 
+	const { title, logo } = meta;
+
 	return (
-		<nav className={cn('menu')}>
-			<span className={cn('logo')}>{title}</span>
+		<nav className={cn('header')}>
+			<div className={cn('wrapper')}>
+				<img alt='logo' className={cn('logo')} src={logo} />
+				<span className={cn('title')}>{title}</span>
+			</div>
 
 			<div className={cn('wrapper')}>
 				<AccountBox user={userState} />

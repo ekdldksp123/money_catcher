@@ -5,35 +5,28 @@
  * @since 2022.06.20 Mon 22:37:47
  */
 
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-import { refWidth } from './env';
+import { User } from './env';
 
 /**
- * 반응형 여부 반환 훅 메서드
- * - true: 데스크탑, 태블릿
- * - false: 모바일
+ * 권한 훅 메서드
  *
- * @param {number} width : 기준 너비
- *
- * @returns {boolean} 반응형 여부
+ * @param {User} user: User 객체
  */
-export function useSemanticHook(width: number = refWidth): boolean
+export function useAuth(user: User): void
 {
-	const [ state, setState ] = useState(true);
+	const router = useRouter();
 
 	useEffect(() =>
 	{
-		const handler = () => setState(window.innerWidth >= width);
-
-		window.addEventListener('resize', handler);
-
-		handler();
-
-		return () => window.removeEventListener('resize', handler);
+		// 유저 정보가 유효하지 않을 경우
+		if (!user)
+		{
+			router.push('/login');
+		}
 	}, []);
-
-	return state;
 }
 
 export const useScript = (src:string) =>

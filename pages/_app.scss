@@ -1,7 +1,6 @@
-@import '../src/components/_common';
-
 :root {
-	--primary: dodgerblue;
+	--primary: rgb(0, 200, 255);
+	--secondary: rgb(255, 255, 255);
 
 	// 웹 페이지 사이즈
 	--web-width: 414px;
@@ -10,6 +9,7 @@
 	--header-height: 50px;
 
 	--font-size: 14px;
+	font-family: 'Jua', sans-serif;
 }
 
 html,

@@ -48,7 +48,7 @@ export default function MobileNav({ menuList, className, ...props }: NavProps): 
 				className={cn('switch', isOpen !== undefined && isOpen ? 'open' : 'close')}
 				onClick={() => setOpen(!isOpen)}
 			>
-				{isOpen ? <IoCloseOutline className={cn('hamburger')} size={24} /> : <IoMenuOutline className={cn('hamburger')} size={24} />}
+				{isOpen ? <IoCloseOutline className={cn('hamburger')} color='#00c8ff' size={24} /> : <IoMenuOutline className={cn('hamburger')} color='#00c8ff' size={24} />}
 			</button>
 
 			<aside className={cn('sidebar', isOpen !== undefined && (isOpen ? 'open' : 'close'), className)} {...props}>

@@ -8,7 +8,8 @@
 import classNames from 'classnames/bind';
 import React from 'react';
 import { FaHome } from 'react-icons/fa';
-import { MdLogin } from 'react-icons/md';
+import { GiPayMoney, GiTakeMyMoney } from 'react-icons/gi';
+import { MdLogin, MdUnsubscribe, MdOutlineEmojiPeople } from 'react-icons/md';
 import { useRecoilValue } from 'recoil';
 import { meta } from 'src/common/env';
 import { userAtom } from 'src/common/state';
@@ -39,22 +40,22 @@ const userMenuList: Item[] = [
 		path: '/'
 	},
 	{
-		icon: <FaHome />,
+		icon: <GiPayMoney />,
 		name: '지출 관리',
 		path: '/incomes'
 	},
 	{
-		icon: <FaHome />,
+		icon: <GiTakeMyMoney />,
 		name: '저축 관리',
 		path: '/savings'
 	},
 	{
-		icon: <FaHome />,
+		icon: <MdUnsubscribe />,
 		name: '구독 관리',
 		path: '/subscriptions'
 	},
 	{
-		icon: <FaHome />,
+		icon: <MdOutlineEmojiPeople />,
 		name: '마이페이지',
 		path: '/mypage'
 	}

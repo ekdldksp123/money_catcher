@@ -55,7 +55,7 @@ export default function MobileNav({ menuList, className, ...props }: NavProps): 
 				<nav className={cn('mobile-nav')}>{menu}</nav>
 			</aside>
 
-			{isOpen ? <aside className={cn('sidebar-wrapper')} onClick={handleClose} /> : null}
+			{isOpen ? <aside className={cn('sidebar-wrapper')} onClick={() => handleClose} /> : null}
 		</>
 	);
 }

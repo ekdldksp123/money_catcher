@@ -29,10 +29,6 @@ const IncomesView:React.FC<AssetProps> = ({ asset }) =>
 		<>
 			<section className='page'>
 				<Banner title='지출 관리' />
-				<Title>
-					목표 소비 금액: 800,000
-					<br />(달성률 : 50%)
-				</Title>
 
 				<NavTabs asset={asset} />
 

@@ -22,7 +22,10 @@ export interface User
 // 반응성 기준 길이
 export const refWidth = 900;
 
-export const title = 'Show Me The Money';
+export const meta = {
+	logo: 'https://user-images.githubusercontent.com/50317129/175574599-d7180a54-b519-44c7-b916-6a9c7b8435f9.png',
+	title: '머니캐처'
+};
 
 export const user: User = {
 	address: '서울',

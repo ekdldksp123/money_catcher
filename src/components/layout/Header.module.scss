@@ -1,4 +1,4 @@
-.menu {
+.header {
 	position: fixed;
 	top: 0;
 	margin: 0;
@@ -28,6 +28,13 @@
 }
 
 .logo {
+	--size: 30px;
+
+	width: var(--size);
+	height: var(--size);
+}
+
+.title {
 	color: darkgray;
 	font-size: 1.4rem;
 	font-weight: bold;

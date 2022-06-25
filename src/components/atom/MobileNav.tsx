@@ -8,7 +8,7 @@
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IoMenuOutline, IoCloseOutline } from 'react-icons/io5';
 
 import styles from './MobileNav.module.scss';
@@ -31,9 +31,11 @@ export default function MobileNav({ menuList, className, ...props }: NavProps): 
 
 	const handleClose = () => setOpen(false);
 
+	useEffect(() => router.events.on('routeChangeComplete', handleClose), []);
+
 	const menu = menuList.map(({ icon, name, path }, index) => (
 		<Link href={path} key={`mobile-nav-item-${index}`} passHref>
-			<a className={cn('link', router?.pathname === path && 'active')} href='#replace' onClick={handleClose}>
+			<a className={cn('link', router?.pathname === path && 'active')} href='#replace'>
 				<span>{icon}</span>
 				<span>{name}</span>
 			</a>

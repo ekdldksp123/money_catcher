@@ -17,6 +17,6 @@
 	}
 
 	&.active {
-		color: $primary;
+		color: var(--primary);
 	}
 }

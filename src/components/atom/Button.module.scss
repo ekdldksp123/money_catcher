@@ -3,6 +3,11 @@
 .button {
 	$color: black;
 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+
 	background-color: $color;
 	border: 1px solid $color;
 	padding: 5px 10px;
@@ -30,7 +35,7 @@
 	}
 
 	&.color-primary {
-		$color: $primary;
+		$color: var(--primary);
 
 		background-color: $color;
 		border: 1px solid $color;
@@ -38,6 +43,40 @@
 		&:hover:not(:disabled) {
 			background-color: transparent;
 			color: $color;
+		}
+
+		&.outline {
+			background-color: transparent;
+			border: 1px solid $color;
+			color: $color;
+
+			&:hover:not(:disabled) {
+				background-color: $color;
+				color: white;
+			}
+		}
+	}
+
+	&.color-secondary {
+		$color: #8b95a1;
+
+		background-color: $color;
+		border: 1px solid $color;
+
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			color: $color;
+		}
+
+		&.outline {
+			background-color: transparent;
+			border: 1px solid $color;
+			color: $color;
+
+			&:hover:not(:disabled) {
+				background-color: $color;
+				color: white;
+			}
 		}
 	}
 
@@ -51,6 +90,17 @@
 			background-color: transparent;
 			color: $color;
 		}
+
+		&.outline {
+			background-color: transparent;
+			border: 1px solid $color;
+			color: $color;
+
+			&:hover:not(:disabled) {
+				background-color: $color;
+				color: white;
+			}
+		}
 	}
 
 	&.color-info {
@@ -62,6 +112,17 @@
 		&:hover:not(:disabled) {
 			background-color: transparent;
 			color: $color;
+		}
+
+		&.outline {
+			background-color: transparent;
+			border: 1px solid $color;
+			color: $color;
+
+			&:hover:not(:disabled) {
+				background-color: $color;
+				color: white;
+			}
 		}
 	}
 
@@ -75,6 +136,17 @@
 			background-color: transparent;
 			color: $color;
 		}
+
+		&.outline {
+			background-color: transparent;
+			border: 1px solid $color;
+			color: $color;
+
+			&:hover:not(:disabled) {
+				background-color: $color;
+				color: white;
+			}
+		}
 	}
 
 	&.color-error {
@@ -86,6 +158,17 @@
 		&:hover:not(:disabled) {
 			background-color: transparent;
 			color: $color;
+		}
+
+		&.outline {
+			background-color: transparent;
+			border: 1px solid $color;
+			color: $color;
+
+			&:hover:not(:disabled) {
+				background-color: $color;
+				color: white;
+			}
 		}
 	}
 
@@ -99,6 +182,17 @@
 		&:hover:not(:disabled) {
 			background-color: transparent;
 			color: $color;
+		}
+
+		&.outline {
+			background-color: transparent;
+			border: 1px solid $color;
+			color: $color;
+
+			&:hover:not(:disabled) {
+				background-color: $color;
+				color: white;
+			}
 		}
 	}
 }

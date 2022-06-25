@@ -19,7 +19,7 @@
 
 	position: fixed;
 	top: var(--header-height);
-	right: -$width;
+	right: calc($width * -1 - 2px);
 	background-color: white;
 	border-left: 2px solid whitesmoke;
 	width: $width;
@@ -27,11 +27,11 @@
 	z-index: 16;
 
 	&.open {
-		@include slide-in-animation($width);
+		@include slide-in-animation(calc($width + 2px));
 	}
 
 	&.close {
-		@include slide-out-animation($width);
+		@include slide-out-animation(calc($width + 2px));
 	}
 }
 

@@ -10,6 +10,7 @@ import Head from 'next/head';
 import { RecoilRoot } from 'recoil';
 
 import './_app.scss';
+
 import Header from '@/layout/Header';
 
 /**

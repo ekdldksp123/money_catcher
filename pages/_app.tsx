@@ -31,7 +31,6 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element
 				<meta charSet='UTF-8' />
 
 				<meta content='width=device-width, initial-scale=1.0' name='viewport' />
-				{/* <meta content='upgrade-insecure-requests' httpEquiv='Content-Security-Policy' /> */}
 				<meta content='ie=edge' httpEquiv='X-UA-Compatible' />
 			</Head>
 

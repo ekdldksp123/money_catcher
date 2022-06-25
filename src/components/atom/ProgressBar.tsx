@@ -2,22 +2,22 @@ import 'antd/dist/antd.css';
 import { Progress } from 'antd';
 import React from 'react';
 
-import { ProgressProps } from '@/types/atom/ProgressProps';
+import { ProgressProps, ProgressStatus, ProgressType } from '@/types/atom/ProgressProps';
 
-const ProgressBar:React.FC<ProgressProps> = ({ percent, status, type }) =>
+const ProgressBar:React.FC<ProgressProps> = ({ percent, status, type, className }) =>
 {
-	const renderProgress = (status?:any, type?:any) =>
+	const renderProgress = (status?: ProgressStatus, type?: ProgressType) =>
 	{
 		if (status && type)
 		{
-			return <Progress percent={percent} status={status} strokeColor={strokeColor} type={type} />;
+			return <Progress className={className} percent={percent} status={status} strokeColor={strokeColor} type={type} />;
 		} if (status)
 		{
-			return <Progress percent={percent} status={status} strokeColor={strokeColor} type='line' />;
+			return <Progress className={className} percent={percent} status={status} strokeColor={strokeColor} type='line' />;
 		} if (type)
 		{
-			return <Progress percent={percent} strokeColor={strokeColor} type={type} />;
-		} return <></>;
+			return <Progress className={className} percent={percent} strokeColor={strokeColor} type={type} />;
+		} return null;
 	};
 
 	return (

@@ -44,12 +44,15 @@ export default function Login(): JSX.Element
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>
 	{
-		const { currentTarget } = e;
+		const { elements } = e.currentTarget;
 
 		e.preventDefault();
 
+		const id = elements.namedItem('id') as HTMLInputElement;
+		const password = elements.namedItem('password') as HTMLInputElement;
+
 		// 아이디가 다를 경우
-		if (currentTarget.id.value !== user.id)
+		if (id.value !== user.id)
 		{
 			setModalState((
 				<>
@@ -60,7 +63,7 @@ export default function Login(): JSX.Element
 		}
 
 		// 비밀번호가 다를 경우
-		else if (currentTarget.password.value !== user.password)
+		else if (password.value !== user.password)
 		{
 			setModalState((
 				<>
@@ -96,7 +99,7 @@ export default function Login(): JSX.Element
 			</section>
 
 			<Modal
-				isShow={modalState}
+				isShow={modalState !== undefined}
 				title='로그인 실패'
 				onClose={handleClose}
 			>

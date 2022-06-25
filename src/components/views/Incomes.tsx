@@ -8,11 +8,6 @@ import Banner from '@/layout/Banner';
 import NavTabs from '@/molecules/Tabs';
 import { AssetProps } from '@/types/molecules/AssetProps';
 
-import Toast from '@/atom/Toast';
-import Banner from '@/layout/Banner';
-import NavTabs from '@/molecules/Tabs';
-import { AssetProps } from '@/types/molecules/AssetProps';
-
 const IncomesView:React.FC<AssetProps> = ({ asset }) =>
 {
 	const [ pushAlert, setPushAlert ] = useState<boolean>(false);

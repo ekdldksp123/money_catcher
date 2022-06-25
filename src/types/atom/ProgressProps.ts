@@ -1,5 +1,10 @@
-export interface ProgressProps {
-    type?: "circle" | "line" | "dashboard";
+export type ProgressType = 'circle' | 'line' | 'dashboard'
+export type ProgressStatus = 'active' | 'exception' | 'normal' | 'success'
+
+export interface ProgressProps
+{
+    type?: ProgressType;
     percent: number;
-    status?: "active" | "exception" | "normal" | "success";
+    status?: ProgressStatus;
+    className?: string | undefined
 }

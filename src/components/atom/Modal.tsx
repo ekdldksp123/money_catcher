@@ -19,7 +19,7 @@ import { ModalProps } from '@/types/atom/ModalProps';
  *
  * @returns {JSX.Element} JSX
  */
-export default function Modal({ title, isShow, onConfirm, onClose, children, className, ...props }: ModalProps): JSX.Element
+export default function Modal({ title, isShow, onConfirm, onClose, children, className, ...props }: ModalProps): JSX.Element | null
 {
 	const cn = classNames.bind(styles);
 
@@ -58,8 +58,8 @@ export default function Modal({ title, isShow, onConfirm, onClose, children, cla
 	}, []);
 
 	return isShow ? (
-		<div className={cn(className, 'modal-wrapper')}>
-			<div className={cn(className, 'modal')} {...props}>
+		<div className={cn(className, 'modal-wrapper')} onClick={onClose}>
+			<div className={cn(className, 'modal')} {...props} onClick={(e) => e.stopPropagation()}>
 				<div className={cn('modal-header')}>
 					<h3 className={cn('modal-title')}>{title}</h3>
 				</div>

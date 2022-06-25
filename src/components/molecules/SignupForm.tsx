@@ -7,8 +7,7 @@
 
 import classNames from 'classnames/bind';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
-import { FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 
 import btnStyles from '@/atom/ButtonGroup.module.scss';
 import Modal from '@/atom/Modal';
@@ -132,7 +131,7 @@ export default function SignupForm(): JSX.Element
 			</form>
 
 			<Modal
-				isShow={confirmModalState}
+				isShow={confirmModalState !== undefined}
 				title='회원가입 확인'
 				onClose={handleConfirmModalClose}
 				onConfirm={handleConfirmModalConfirm}
@@ -141,7 +140,7 @@ export default function SignupForm(): JSX.Element
 			</Modal>
 
 			<Modal
-				isShow={modalState}
+				isShow={modalState !== undefined}
 				title='회원가입 완료'
 				onClose={handleModalClose}
 			>

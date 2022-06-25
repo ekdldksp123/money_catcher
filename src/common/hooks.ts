@@ -13,11 +13,11 @@ import { User } from './env';
 /**
  * 권한 훅 메서드
  *
- * @param {User} user: User 객체
+ * @param {User | undefined} user: User 객체
  * @param {boolean} flag: 권한 유무 여부
  * @param {string} url: 이동 대상 URL
  */
-export function useAuth(user: User, flag: boolean, url: string = '/login'): void
+export function useAuth(user: User | undefined, flag: boolean, url: string = '/login'): void
 {
 	const router = useRouter();
 
@@ -44,7 +44,7 @@ export const useScript = (src:string) =>
 				return;
 			}
 
-			let script = document.querySelector(`script[src="${src}"]`);
+			let script = document.querySelector(`script[src="${src}"]`) as HTMLScriptElement;
 
 			if (!script)
 			{
@@ -68,7 +68,7 @@ export const useScript = (src:string) =>
 			}
 			else
 			{
-				setStatus(script.getAttribute('data-status'));
+				setStatus(script.getAttribute('data-status') || 'idle');
 			}
 
 			const setStateFromEvent = (event: Event) =>

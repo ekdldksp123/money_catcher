@@ -59,7 +59,7 @@ export default function Modal({ title, isShow, onConfirm, onClose, children, cla
 
 	return isShow ? (
 		<div className={cn(className, 'modal-wrapper')} onClick={onClose}>
-			<div className={cn(className, 'modal')} {...props}>
+			<div className={cn(className, 'modal')} {...props} onClick={(e) => e.stopPropagation()}>
 				<div className={cn('modal-header')}>
 					<h3 className={cn('modal-title')}>{title}</h3>
 				</div>

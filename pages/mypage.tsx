@@ -7,12 +7,12 @@
 
 import classNames from 'classnames/bind';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BsCreditCardFill } from 'react-icons/bs';
 import { FaHashtag, FaMoneyBillWave } from 'react-icons/fa';
 import { MdDelete, MdEdit, MdLogout, MdSavings } from 'react-icons/md';
 import { useRecoilState } from 'recoil';
-import SubscriptionsService from 'src/api/subscription';
+import { useGetCost } from 'src/api/subscription';
 import { useAuth } from 'src/common/hooks';
 import { userAtom } from 'src/common/state';
 
@@ -30,6 +30,7 @@ import Screen from '@/atom/Screen';
 export default function MyPage(): JSX.Element | null
 {
 	const cn = classNames.bind(styles);
+	const date = new Date();
 
 	const router = useRouter();
 	const [ userState, setUserState ] = useRecoilState(userAtom);
@@ -53,18 +54,7 @@ export default function MyPage(): JSX.Element | null
 	const handleEditModalClose = () => setEditModalState(undefined);
 	const handleDeleteModalClose = () => setDeleteModalState(undefined);
 
-	const service = new SubscriptionsService();
-
-	useEffect(() =>
-	{
-		(async () =>
-		{
-			const response = await service.getCost(2021, 4);
-			const json = await response.json();
-
-			console.dir(json);
-		})();
-	});
+	const costs = useGetCost(date.getFullYear(), date.getMonth() + 1);
 
 	return userState === undefined ? null : (
 		<section className={cn('mypage', 'page')}>
@@ -91,7 +81,7 @@ export default function MyPage(): JSX.Element | null
 
 					<div className={cn('user-info-assets-item')}>
 						<span>구독</span>
-						<h4 className={cn('percent', 'safe')}>24%</h4>
+						<h4 className={cn('percent', 'safe')}>{costs?.cost || 0}원</h4>
 					</div>
 				</div>
 			</Screen>

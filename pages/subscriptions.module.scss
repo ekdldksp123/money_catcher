@@ -1,0 +1,54 @@
+.subscriptions {
+	display: flex;
+	flex-direction: column;
+}
+
+.screen-custom {
+	background: linear-gradient(to right, #FC466B, #3F5EFB);
+
+	h3 {
+		color: white;
+		font-size: 3rem;
+		font-weight: bold;
+
+		margin: 40px 0px;
+	}
+}
+
+.summary {
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px gainsboro;
+
+	margin: 40px;
+	padding: 40px;
+}
+
+.summary-title {
+	font-size: 2rem;
+	font-weight: bold;
+
+	margin-bottom: 40px;
+}
+
+.summary-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.summary-board {
+	display: flex;
+	justify-content: space-between;
+
+	p {
+		margin: 0px;
+	}
+}
+
+.summary-money {
+	display: flex;
+	gap: 10px;
+}
+
+.summary-progress {
+	padding-right: 20px;
+}

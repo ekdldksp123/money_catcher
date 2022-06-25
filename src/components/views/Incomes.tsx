@@ -1,5 +1,3 @@
-import 'antd/dist/antd.css';
-
 import { Table } from 'antd';
 import classNames from 'classnames/bind';
 import React from 'react';

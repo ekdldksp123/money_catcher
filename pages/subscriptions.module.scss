@@ -102,12 +102,17 @@
 	width: 100%;
 }
 
+.table-wrapper {
+	overflow: auto;
+
+	border: 1px solid gainsboro;
+	border-radius: 10px;
+	overflow: auto;
+}
+
 .list-table {
 	width: 100%;
 	border-collapse: collapse;
-	border: 1px solid gainsboro;
-	border-radius: 10px;
-	overflow: hidden;
 
 	thead {
 		tr {
@@ -116,6 +121,7 @@
 				color: white;
 
 				background-color: #1ECD97;
+				word-break: keep-all;
 			}
 		}
 	}
@@ -127,6 +133,7 @@
 			td {
 				border-bottom: 1px solid gainsboro;
 				padding: 8px 12px;
+				word-break: keep-all;
 			}
 
 			&:hover {

@@ -9,7 +9,7 @@ import classNames from 'classnames/bind';
 import { useState, FormEvent, useRef } from 'react';
 import { MdAddCircle, MdWarning } from 'react-icons/md';
 import { useRecoilValue } from 'recoil';
-import SubscriptionsService, { SubscriptionPutRequestProps, useGetCost, useGetEfficiency, useGetRecommendation, usePutSubscription } from 'src/api/subscription';
+import SubscriptionsService, { SubscriptionPutRequestProps, useGetCost, useGetEfficiency, useGetRecommendation } from 'src/api/subscription';
 import { useAuth } from 'src/common/hooks';
 import { userAtom } from 'src/common/state';
 

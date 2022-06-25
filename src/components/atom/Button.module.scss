@@ -1,15 +1,13 @@
-
-
 .button {
-	$color: #F5F5F5;
+	$color-ref: #F5F5F5;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 5px;
 
-	background-color: $color;
-	border: 1px solid $color;
+	background-color: $color-ref;
+	border: 1px solid $color-ref;
 	padding: 5px 10px;
 	color: #626262;
 	font-family: inherit;
@@ -19,7 +17,6 @@
 
 	&:hover:not(:disabled) {
 		background-color: transparent;
-		color: $color;
 	}
 
 	&:disabled {
@@ -83,6 +80,7 @@
 	&.color-info {
 		$color: dodgerblue;
 
+		color: white;
 		background-color: $color;
 		border: 1px solid $color;
 
@@ -128,7 +126,7 @@
 
 	&.color-error {
 		$color: crimson;
-		color: #fff !important;
+		color: #fff;
 		background-color: $color;
 		border: 1px solid $color;
 
